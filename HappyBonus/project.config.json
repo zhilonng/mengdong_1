@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -11,7 +11,6 @@
 	"libVersion": "1.7.3",
 	"appid": "wxaa949be24c459de7",
 	"projectname": "HappyBonus",
-	"isGameTourist": false,
 	"condition": {
 		"search": {
 			"current": -1,
@@ -19,10 +18,6 @@
 		},
 		"conversation": {
 			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {

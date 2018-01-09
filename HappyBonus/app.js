@@ -1,17 +1,27 @@
 //app.js
 App({
+  onLoad:function(){
+    console.log("App onLoad")
+    
+  },
   onLaunch: function () {
+    var that = this
+    console.log("App OnLaunch")
+    wx.getUserInfo({
+      success: function (user) {
+        // console.log(user)
+        // this.setglobalData({
+        //   userInfo :user.userInfo
+        // })
+        that.globalData.userInfo = user.userInfo
+      }
+    })
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -34,6 +44,17 @@ App({
     })
   },
   globalData: {
-    userInfo: null
-  }
+    userInfo: [],
+    localApi:'',
+    
+  },
+  // 登录
+  login:function(){
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log(res)
+      }
+    })
+  },
 })

@@ -1,0 +1,19 @@
+<!--pages/mine/mine.wxml-->
+<view class='container'>
+  <view class='con'>
+    <view class='mine_header' style="background:url('../image/hot1.png') no-repeat;background-size:750rpx 346rpx;">
+    <view class='header_Box fl'>
+      <image src='{{userInfo.avatarUrl}}' mode='widthFix' class='header_Head'> </image>
+    </view>
+    <view class='header_center fl'>
+      <view class='header_name'>王晓明</view>
+      <view class='header_yue'>余额:￥ 0.00</view>
+    </view>
+     <view class='header_right fr'>
+        <image src='../image/hot.png' mode='widthFix' class='hotMoney_tu'></image>
+        <view class='header-right_tixian'>提现</view>
+     </view>
+    </view>
+
+  </view>
+</view>

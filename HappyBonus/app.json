@@ -1,12 +1,42 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/mine/mine",
+    "pages/classify/classify",
+    "pages/index/Share/ShareHotMoney",
+    "pages/index/Share/share",
+    "pages/index/mRecord/myRecord"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e73b58",
+    "navigationBarTitleText": "讨红包",
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": "true"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "selectedColor": "#fe2f5b",
+    "list": [
+      {
+        "iconPath": "",
+        "selectedIconPath": "",
+        "pagePath": "pages/index/index",
+        "text": "我的记录"
+      },
+      {
+        "iconPath": "",
+        "selectedIconPath": "",
+        "pagePath": "pages/classify/classify",
+        "text": "余额提现"
+      },
+      {
+        "iconPath": "",
+        "selectedIconPath": "",
+        "pagePath": "pages/mine/mine",
+        "text": "我"
+      }
+    ]
   }
 }
