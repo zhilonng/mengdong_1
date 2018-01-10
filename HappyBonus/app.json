@@ -6,7 +6,8 @@
     "pages/classify/classify",
     "pages/index/Share/ShareHotMoney",
     "pages/index/Share/share",
-    "pages/index/mRecord/myRecord"
+    "pages/index/mRecord/myRecord",
+    "pages/qr_page/qr_page"
   ],
   "window": {
     "backgroundTextStyle": "light",

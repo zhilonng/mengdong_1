@@ -20,6 +20,7 @@ Page({
     Money:'',
     Number:'',
     answer:'',
+    showModalStatus: false,
   },
   //事件处理函数
   ChangeTab:function(e){
@@ -58,6 +59,20 @@ Page({
 
   },
 
+  //修改金额
+  modifyMoney: function() {
+    wx.showModal({
+      title: '提示',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+
+  },
 
   // 获取语音
   startVoice: function () {
@@ -163,10 +178,21 @@ Page({
                   text:'卖萌',
                 })
                 createOrder();
+
+                //跳转页面
+                wx.navigateTo({
+                  url: '../qr_page/qr_page',
+                })
               }
           },
           fail: function(error) {
               console.log(error)
+              wx.showToast({
+                title: 'fail',
+                icon: 'loading',
+                duration: 2000
+              })
+
           }
       })
     }
@@ -201,7 +227,61 @@ Page({
     if(that.data.choseimg.length!=0){
       upload();
     }
-  }
+  },
+
+  //弹窗逻辑
+  modifyMoney: function (e) {
+    var currentStatu = e.currentTarget.dataset.statu;
+    this.util(currentStatu)
+  },
+  util: function (currentStatu) {
+    /* 动画部分 */
+    // 第1步：创建动画实例 
+    var animation = wx.createAnimation({
+      duration: 200, //动画时长 
+      timingFunction: "linear", //线性 
+      delay: 0 //0则不延迟 
+    });
+
+    // 第2步：这个动画实例赋给当前的动画实例 
+    this.animation = animation;
+
+    // 第3步：执行第一组动画 
+    animation.opacity(0).rotateX(-100).step();
+
+    // 第4步：导出动画对象赋给数据对象储存 
+    this.setData({
+      animationData: animation.export()
+    })
+
+    // 第5步：设置定时器到指定时候后，执行第二组动画 
+    setTimeout(function () {
+      // 执行第二组动画 
+      animation.opacity(1).rotateX(0).step();
+      // 给数据对象储存的第一组动画，更替为执行完第二组动画的动画对象 
+      this.setData({
+        animationData: animation
+      })
+
+      //关闭 
+      if (currentStatu == "close") {
+        this.setData(
+          {
+            showModalStatus: false
+          }
+        );
+      }
+    }.bind(this), 200)
+
+    // 显示 
+    if (currentStatu == "open") {
+      this.setData(
+        {
+          showModalStatus: true
+        }
+      );
+    }
+  } 
 
 
 })

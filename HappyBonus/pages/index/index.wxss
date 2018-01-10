@@ -1,3 +1,4 @@
+@import "../custom_view/custom_alertdialog.wxss";
 /**index.wxss**/
 Page{
   width: 100%;
