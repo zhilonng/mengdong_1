@@ -1,10 +1,13 @@
 <!--index.wxml-->
 <view class="container">
-<view class='pic'></view>
-<view class='f_container'>
-<button class='btn_test'>text</button>
-<button class='btn_balance'>9.99$</button>
-<button class='btn_share'>shared</button>
-<button class='btn_QRCode'>generate QR</button>
-</view>
+	<view class='pic'>
+	    <image class="chosepic" mode="scaleToFill" src="{{choseimg}}"></image>
+	    <view class="addicon"  bindtap="pubimg">选则图片</view>
+	</view>
+	<view class='f_container'>
+		<button class='btn_test'>text</button>
+		<button class='btn_balance'>9.99$</button>
+		<button class='btn_share' bindtap="tapshare">生成拜年</button>
+		<button class='btn_QRCode'>generate QR</button>
+	</view>
 </view>
