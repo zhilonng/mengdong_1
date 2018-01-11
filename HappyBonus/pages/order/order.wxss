@@ -33,28 +33,23 @@ Page{
 	font-weight:blod;
 	color:#fde3aa;
 }
-.snsQrcode{
-	height:25%;
+.price{
+	margin-top:2%;
+	font-size:xx-large;
+	font-weight:blod;
+	color:#fde3aa;
 }
-.sharebox{
-	width:80%;
-	height:30%;
-	background:#ffffff;
+.paybutton{
+	margin-top:10%;
+	border-radius:50%;
+	height:200rpx;
+	width:200rpx;
+	background:#fde3aa;
 }
-.share{
-	margin:8% 5% 0% 5%;
-	height:25%;
-	line-height:82rpx;
-	
-}
-.share1{
-	margin:8% 5% 0% 5%;
-	height:25%;
-	background:#00b720;
-	border-radius:3%;
-	color:#ffffff;
-	font-size:medium;
-	line-height:82rpx;
-}
-.share_txt{
+.paytext{
+	margin-top:11%;
+	margin-left:25%;
+	font-size:100rpx;
+	font-weight:blod;
+	color:#c62d14;
 }

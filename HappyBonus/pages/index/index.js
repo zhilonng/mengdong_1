@@ -10,7 +10,6 @@ Page({
     picRandName:'',
     picUrl:'',
     price:'',
-    uid:'',
     text:'',
     token : '',
     shuoming1:'小伙伴们说对口令就能获得随即打赏',
@@ -173,16 +172,11 @@ Page({
               if(result.statusCode==200){
                 that.setData({
                   picUrl:'http://p2bl4mkhf.bkt.clouddn.com/'+that.data.picRandName,
-                  uid:101074,
+                  uid:app.globalData.userInfo.user_id,
                   price:9.99,
                   text:'卖萌',
                 })
                 createOrder();
-
-                //跳转页面
-                wx.navigateTo({
-                  url: '../qr_page/qr_page',
-                })
               }
           },
           fail: function(error) {
@@ -214,12 +208,15 @@ Page({
       success:function(res){
       console.log(res)
       if(res.statusCode==200){
-        wx.showToast({
-          title: '发布成功',
-          icon: 'success',
-          duration: 500
-        })
+        // wx.showToast({
+        //   title: '发布成功',
+        //   icon: 'success',
+        //   duration: 500
+        // })
         //跳转到分享页面
+        wx.redirectTo({
+          url: '../qr_page/qr_page?order_id='+res.data.order_id,
+        })
       }
       }
     })

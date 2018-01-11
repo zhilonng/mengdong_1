@@ -1,4 +1,4 @@
-// pages/qr_page/qr_page.js
+// pages/order/order.js
 Page({
 
   /**
@@ -16,15 +16,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     var that=this;
     that.setData({
-      order_id:options.order_id
+      order_id:options.id
     })
     wx.request({
     url: 'https://baby.mamid.cn/User/Order/shareGetOrder/order_id/'+that.data.order_id, //仅为示例，并非真实的接口地址
     method:'get',
     success: function(res) {
-      console.log(getApp().globalData)
       console.log(res.data)
       that.setData({
         picUrl:res.data.picurl,

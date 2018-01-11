@@ -7,15 +7,50 @@ App({
   onLaunch: function () {
     var that = this
     console.log("App OnLaunch")
-    wx.getUserInfo({
-      success: function (user) {
-        // console.log(user)
-        // this.setglobalData({
-        //   userInfo :user.userInfo
-        // })
-        that.globalData.userInfo = user.userInfo
+    wx.login({
+      success:function(res){
+        console.log(res)
+        if(res.code){
+              wx.getUserInfo({
+              success: function (user) {
+                 console.log(user)
+                var userinfo = user.userInfo
+                var username = userinfo.nickName
+                var useravatar =userinfo.avatarUrl
+                var usersex=userinfo.gender
+                // that.setglobalData({
+                //   userInfo :user.userInfo
+                // })
+                that.globalData.userInfo = user.userInfo
+                    wx.request({
+                      url: 'https://baby.mamid.cn/User/Public/login',
+                      method: 'POST',
+                      data: {
+                        'code':user.encryptedData,
+                        'sscode':res.code,
+                        'user_name':username,
+                        'user_avatar':useravatar,
+                        'user_sex':usersex
+                      },
+                      header: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                      },
+                      success: function(res) {
+                        console.log(res.data)
+                        if(res.data.statusCode==200){
+                          that.globalData.userInfo.user_id=res.data.user_id;
+                        }
+                        
+                      }
+                  })
+              }
+            })
+        }else{
+          consoel.log('获取用户状态失败')
+        }
       }
     })
+
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())

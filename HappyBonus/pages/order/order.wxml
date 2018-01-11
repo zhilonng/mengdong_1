@@ -1,0 +1,18 @@
+<!--pages/order/order.wxml-->
+<view class="container">
+	<view class='pic'>
+	    <image class="picture" mode="scaleToFill" src="{{picUrl}}"></image>
+	</view>
+	<view class='actcute'>
+	    {{nickname}} 向你卖了一个萌
+	</view>
+	<view class="text">
+		{{text}}
+	</view>
+	<view class="price">
+		{{price}}¥
+	</view>
+	<view class="paybutton">
+	 	<view class="paytext">买</view>
+	</view>	
+</view>

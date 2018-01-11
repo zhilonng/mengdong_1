@@ -1,2 +1,22 @@
 <!--pages/qr_page/qr_page.wxml-->
-<text>pages/qr_page/qr_page.wxml</text>
+<view class="container">
+	<view class='pic'>
+	    <image class="picture" mode="scaleToFill" src="{{picUrl}}"></image>
+	</view>
+	<view class='actcute'>
+	    {{nickname}} 卖了一个萌
+	</view>
+	<view class="text">
+		{{text}}
+	</view>
+	<view class="snsQrcode">
+		<image mode="scaleToFill" src="{{qrcodePic}}"></image>
+	</view>
+	<view class="sharebox">
+		<button class="share" type="primary" open-type="share">
+			<view class="share_txt">转发到好友或群聊</view>
+		</button>
+		<view class="shareTopic">
+		</view>
+	</view>
+</view>
