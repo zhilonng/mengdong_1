@@ -6,10 +6,10 @@
 	</view>
 	<view class='f_container'>
 		<button class='btn_test'>text</button>
-		<button class='btn_balance' bindtap='modifyMoney' data-statu="open">9.99$</button>
+		<button class='btn_balance' bindtap='modifyMoney' data-statu="open">{{money}}元</button>
 		<button class='btn_share' bindtap="tapshare">生成拜年</button>
 		<button class='btn_QRCode'>generate QR</button>
 	</view>
 </view>
 
-<!-- <include src="../custom_view/custom_alertdialog.wxml" /> -->
+ <include src="../custom_view/custom_alertdialog.wxml" /> 

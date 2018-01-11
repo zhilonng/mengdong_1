@@ -1,66 +1,107 @@
-// pages/classify/classify.js
+//index.js
+//获取应用实例
+const app = getApp()
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    houBaoStyle: 1,
+    userInfo: [],
+    shuoming1: '小伙伴们说对口令就能获得随即打赏',
+    shuoming2: '好友听完你说的话就能领取赏金',
+    shuoming3: '好友念出你的答案就能领取赏金',
+    kongling: '',
+    Money: '',
+    Number: '',
+    answer: '',
+  },
+  //事件处理函数
+  ChangeTab: function (e) {
+    var that = this;
+    console.log("currentTab")
+    var currentTab = e.currentTarget.dataset.id;
+    that.setData({
+      houBaoStyle: currentTab,
+    })
+  },
+  onLoad: function () {
+    var that = this;
+    wx.getUserInfo({
+      success: function (user) {
+        console.log(user)
+        that.setData({
+          userInfo: user.userInfo,
+        })
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+
+  // 获取语音
+  startVoice: function () {
+    console.log("开始录音");
+    wx.startRecord({
+      success: function (res) {
+        console.log("录音结束")
+        var tempFilePath = res.tempFilePath;
+        console.log(tempFilePath);
+
+      },
+      fail: function () {
+
+      }
+    })
+    setTimeout(function () {
+      wx.stopRecord({
+        success: function (res) {
+          console.log(res)
+        }
+      });
+    }, 10000)
+  },
+  endstartVoice: function () {
+    wx.stopRecord({
+      success: function (res) {
+        console.log(res)
+      }
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
+  // 跳转链接
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
+  tomyRecord: function () {
+    var that = this;
+    wx.navigateTo({
+      url: './mRecord/myRecord',
+    })
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
+  // 获取页面填入的值
+  koulingInput: function (e) {
+    var that = this;
+    console.log(e.detail.value)
+    that.setData({
+      kouling: e.target.value,
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
+  MoneyInput: function (e) {
+    var that = this;
+    console.log(e.detail.value)
+    that.setData({
+      Money: e.target.value,
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
+  NumberInput: function (e) {
+    var that = this;
+    console.log(e.detail.value)
+    that.setData({
+      Number: e.target.value,
+    })
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
+  jubenAnswerInput: function (e) {
+    var that = this;
+    console.log(e.detail.value);
+    that.setData({
+      answer: e.detail.value,
+    })
+  },
 })

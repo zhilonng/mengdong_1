@@ -8,6 +8,7 @@
     "pages/index/Share/share",
     "pages/index/mRecord/myRecord",
     "pages/qr_page/qr_page",
+    "pages/record/record",
     "pages/order/order"
   ],
   "window": {
@@ -30,14 +31,14 @@
       {
         "iconPath": "pages/image/money.png",
         "selectedIconPath": "pages/image/money.png",
-        "pagePath": "pages/classify/classify",
-        "text": "余额提现"
+        "pagePath": "pages/record/record",
+        "text": "红包记录"
       },
       {
         "iconPath": "pages/image/money.png",
         "selectedIconPath": "pages/image/money.png",
         "pagePath": "pages/mine/mine",
-        "text": "我"
+        "text": "个人中心"
       }
     ]
   }

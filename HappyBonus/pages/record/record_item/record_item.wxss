@@ -1,0 +1,23 @@
+.item_container {
+  width: 94%;
+  height: 120rpx;
+  background: white;
+  margin: 20rpx 3% 0 3%;
+}
+
+.item_photo {
+  width: 80rpx;
+  height: 80rpx;
+  background: red;
+  margin: 20rpx 0 0 20rpx;
+}
+.item_details {
+  float: right;
+  margin: 20rpx 20rpx 0 0;
+}
+.item_money {
+  size: 35rpx;
+}
+.item_time {
+  size: 35rpx;
+}

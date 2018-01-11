@@ -1,15 +1,6 @@
- <!--mask-->
-<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view> 
-<!--content-->
-<!--使用animation属性指定需要执行的动画-->
-<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}"> 
-  
- <!--drawer content-->
- <view class="drawer_content"> 
- <view class="top bottom grid"> 
- <label class="title col-0">金额</label> 
- <input class="input_base input_h30 col-1" name="bz"></input> 
- </view> 
- </view> 
- <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view> 
-</view>
+<view class="container" class="zn-uploadimg">  
+    <button type="primary"bindtap="modalinput"></button>   
+</view>  
+<modal hidden="{{hiddenmodalput}}" bindcancel="cancel" bindconfirm="confirm">  
+    <input type='text' bindinput='enterMoney' placeholder="金额" type='number' value='{{enter_money}}' focus="{{focus}}"/>  
+</modal>  

@@ -1,0 +1,7 @@
+<view class='item_container'>
+<image class='item_photo'>头像</image>
+<view class='item_details'>
+<view class='item_money'>金额</view>
+<view class='item_time'>时间</view>
+</view>
+</view>

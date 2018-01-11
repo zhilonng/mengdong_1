@@ -3,7 +3,7 @@
 Page{
   width: 100%;
   height: 100%;
-  background:#f3f5fa;
+  background:#ea482c;
   font-family:'PingFang SC Medium',  "微软雅黑";
 }
 button {
@@ -29,7 +29,7 @@ button {
 .pic {
   width: 100%;
   height: 40%;
-  background: red;
+  background: #e73b58;
 }
 .chosepic{
   width:300rpx;
