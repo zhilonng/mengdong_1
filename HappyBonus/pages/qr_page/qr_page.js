@@ -86,7 +86,7 @@ Page({
       var user_id=getApp().globalData.userInfo.user_id
       var name = ''
       return {
-        title: '卖了一个萌',
+        title: getApp().globalData.userInfo.nickName+' 卖了一个萌',
         desc: that.data.text,
         path: '/pages/order/order?id='+that.data.order_id,
         success: function(res) {
