@@ -81,20 +81,66 @@ Page({
   /**
    * 用户点击右上角分享
    */
-     onShareAppMessage: function () {
-      var that=this;
-      var user_id=getApp().globalData.userInfo.user_id
-      var name = ''
-      return {
-        title: '卖了一个萌',
-        desc: that.data.text,
-        path: '/pages/order/order?id='+that.data.order_id,
-        success: function(res) {
-        // 转发成功
-        },
-        fail: function(res) {
-          // 转发失败
+    onShareAppMessage: function () {
+        var that=this;
+            return {
+                title: '卖了一个萌',
+                desc: that.data.text,
+                path: '/pages/order/order?id='+that.data.order_id,
+            success: function(res) {
+            // 转发成功
+            },
+            fail: function(res) {
+             // 转发失败
+            }
         }
+    },
+    paybtn:function () {
+        var that=this;
+        wx.request({
+            url: 'https://baby.mamid.cn/User/Pay/payJoinfee', //仅为示例，并非真实的接口地址
+            method:'POST',
+            data:{
+                uid:getApp().globalData.userInfo.user_id,
+                order_id:that.data.order_id
+            },
+            header: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+        success: function(res) {
+          if(res.data.statusCode==200){
+            var result=res.data
+            wx.requestPayment({
+               'timeStamp': result.timeStamp,
+               'nonceStr': result.nonceStr,
+               'package': result.package,
+               'signType': 'MD5',
+               'paySign': result.paySign,
+             'complete':function(res){
+                  console.log(res)
+                  if(res.errMsg=='requestPayment:ok'){
+                      wx.showToast({
+                        title: '支付成功',
+                        icon: 'success',
+                        duration: 2000
+                      })
+                  }else{
+                      wx.showToast({
+                        title: '支付失败',
+                        icon: 'success',
+                        duration: 2000
+                      })
+                  }
+             }
+          })
+         }else{
+            wx.showToast({
+              title: '支付订单创建失败，请稍后再试',
+              icon: 'success',
+              duration: 2000
+            })
+         }
       }
-  },
+    })
+    }
 })

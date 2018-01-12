@@ -7,6 +7,7 @@ Page({
    */
   data: {
     userInfo:[],
+    userMoney:0,
   },
 
   /**
@@ -31,7 +32,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that=this;
+    wx.request({
+      url: 'https://baby.mamid.cn/User/User/getmoney/uid/'+that.data.userInfo.user_id, //仅为示例，并非真实的接口地址
+      method:'get',
+      success: function(res) {
+        console.log(res.data)
+        that.setData({
+          userMoney:res.data.user_money
+        })
+      }
+    })
+
   },
 
   /**
@@ -67,5 +79,12 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  withdrawBtn : function (){
+    console.log('haa')
+    wx.navigateTo({
+      url: '../withdraw/withdraw'
+    })
+
   }
 })

@@ -6,12 +6,12 @@
       <image src='{{userInfo.avatarUrl}}' mode='widthFix' class='header_Head'> </image>
     </view>
     <view class='header_center fl'>
-      <view class='header_name'>王晓明</view>
-      <view class='header_yue'>余额:￥ 0.00</view>
+      <view class='header_name'>{{userInfo.nickName}}</view>
+      <view class='header_yue'>余额:￥ {{userMoney}}</view>
     </view>
-     <view class='header_right fr'>
+     <view class='header_right fr' bindtap="withdrawBtn">
         <image src='../image/hot.png' mode='widthFix' class='hotMoney_tu'></image>
-        <view class='header-right_tixian'>提现</view>
+        <view class='header-right_tixian' >提现</view>
      </view>
     </view>
 

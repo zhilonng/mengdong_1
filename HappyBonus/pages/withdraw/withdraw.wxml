@@ -1,0 +1,23 @@
+<!--pages/withdraw/withdraw.wxml-->
+<view class="container">
+	<view class="top">
+		<view class="mywithdrawtext">
+			我的余额
+		</view>
+		<view class="userMoney">
+			¥ {{userMoney}}
+		</view>
+	</view>
+	<view class="medium">
+		<view class="inputbox">
+			 <input  bindinput="inpuCheck" type="digit" confirm-type="done" placeholder="输入要提现的金额" value="{{allMoney}}"  />
+			 <view class="allbtn" bindtap="allbtn">全部提现</view>  
+		</view>
+		<view class="underbox">
+			提现中的金额
+		</view>
+	</view>
+	<view class="buttom">
+		buttom
+	</view>
+</view>

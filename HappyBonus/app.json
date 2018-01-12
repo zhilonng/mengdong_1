@@ -9,7 +9,8 @@
     "pages/index/mRecord/myRecord",
     "pages/qr_page/qr_page",
     "pages/record/record",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/withdraw/withdraw"
   ],
   "window": {
     "backgroundTextStyle": "light",
