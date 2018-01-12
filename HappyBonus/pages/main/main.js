@@ -1,5 +1,4 @@
-// pages/mine/mine.js
-var app = getApp();
+// pages/main/main.js
 Page({
 
   /**
@@ -7,7 +6,6 @@ Page({
    */
   data: {
     userInfo:[],
-    userMoney:0,
     user_avatar:'',
   },
 
@@ -15,36 +13,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   var that = this;
-   var userInfo = app.globalData.userInfo;
-   that.setData({
-     userInfo: app.globalData.userInfo,
-     user_avatar: app.globalData.userInfo.avatarUrl,
-   })
+    var that = this;
+    wx.getUserInfo({
+      success: function (user) {
+        console.log(user)
+        that.setData({
+          userInfo: user.userInfo,
+          user_avatar: user.userInfo.avatarUrl,
+        })
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+  
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that=this;
-    wx.request({
-      url: 'https://baby.mamid.cn/User/User/getmoney/uid/'+that.data.userInfo.user_id, //仅为示例，并非真实的接口地址
-      method:'get',
-      success: function(res) {
-        console.log(res.data)
-        that.setData({
-          userMoney:res.data.user_money
-        })
-      }
-    })
-
+  
   },
 
   /**
@@ -80,12 +72,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  withdrawBtn : function (){
-    console.log('haa')
-    wx.navigateTo({
-      url: '../withdraw/withdraw'
-    })
-
   }
 })

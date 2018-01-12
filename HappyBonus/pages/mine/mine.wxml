@@ -1,19 +1,31 @@
 <!--pages/mine/mine.wxml-->
 <view class='container'>
-  <view class='con'>
-    <view class='mine_header' style="background:url('../image/hot1.png') no-repeat;background-size:750rpx 346rpx;">
-    <view class='header_Box fl'>
-      <image src='{{userInfo.avatarUrl}}' mode='widthFix' class='header_Head'> </image>
-    </view>
-    <view class='header_center fl'>
-      <view class='header_name'>{{userInfo.nickName}}</view>
-      <view class='header_yue'>余额:￥ {{userMoney}}</view>
-    </view>
-     <view class='header_right fr' bindtap="withdrawBtn">
-        <image src='../image/hot.png' mode='widthFix' class='hotMoney_tu'></image>
-        <view class='header-right_tixian' >提现</view>
-     </view>
-    </view>
+<view class='background_arc'></view>
+<view class='user_info_container'>
+<view class='user_info_container2'>
+<image class='user_photo' src='{{user_avatar}}'></image>
+<view class='user_name'>康帅富</view>
+</view>
+</view>
 
-  </view>
+</view>
+
+<view class='item_container'>
+<view class="item_titile">我的余额</view>
+<view class='space'></view>
+<button class='item_button' type='warn'>提现</button>
+<button class='item_button item_button_white'>明细</button>
+</view>
+
+<view class='item_container'>
+<view class="item_titile">我的纪录</view>
+<view class='space'></view>
+<view class='item_lookup'>查看</view>
+</view>
+
+<view class='item_container'>
+<view class="item_titile">联系我们</view>
+<view class='space'></view>
+<button class='item_button item_button_orange'>客服</button>
+<button class='item_button item_button_blue'>关注公众号</button>
 </view>
