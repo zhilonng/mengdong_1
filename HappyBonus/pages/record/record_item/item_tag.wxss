@@ -1,0 +1,13 @@
+.item_title_container{
+  height: 60rpx;
+  width:130rpx;
+  display: flex;
+  background: #EEB422;
+  border-radius: 30rpx;
+  float: right;
+}
+.item_titile {
+  font-size: 30rpx;
+  color: white;
+  margin: auto;
+}

@@ -4,15 +4,18 @@
 <!--nav  -->
   <view class='nav'>
     <view class="nav_box" >
-      <view bindtap='ChangeTab' data-id="1"
-            style="{{houBaoStyle==1?'border-bottom:2px solid #fff':''}}">
-        收到的红包
+      <view class="nav_titile" bindtap='ChangeTab' data-id="1"
+            style="{{houBaoStyle==1?' color:#EE5C42; border-bottom:2px solid #EE5C42':''}}">
+        我发起的
       </view>
-       <view bindtap='ChangeTab' data-id="2"
-            style="{{houBaoStyle==2?'border-bottom:2px solid #fff':''}}">
-        发出的红包
+       <view class="nav_titile" bindtap='ChangeTab' data-id="2"
+            style="{{houBaoStyle==2?' color:#EE5C42; border-bottom:2px solid #EE5C42':''}}">
+        我参与的
       </view>
-      
+      <view class="nav_titile" bindtap='ChangeTab' data-id="3"
+            style="{{houBaoStyle==3?' color:#EE5C42; border-bottom:2px solid #EE5C42':''}}">
+        收支明细
+      </view>
     </view>
   </view>
 <!--nav  -->

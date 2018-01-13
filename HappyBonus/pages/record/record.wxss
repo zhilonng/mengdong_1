@@ -1,20 +1,23 @@
 @import "./record_item/record_item.wxss";
 Page{
-  background:#f3f5fa;
   font-family:'PingFang SC Medium',  "微软雅黑";
 }
 .nav{
   height:80rpx;
-  background: #e73b58;
+  background: #f3f5fa;
 }
 .nav_box{
   overflow: hidden;
   width:600rpx;
-  height:60rpx;
+  height:80rpx;
   margin:0 auto;
-  line-height: 60rpx;
-  background:#e73b58;
-  color:#fff;
+  line-height: 80rpx;
+  color:grey;
   display:flex;
   justify-content: space-around;
+}
+.nav_titile {
+  height: 76rpx;
+  font-size: 35rpx;
+  margin: auto 0 auto 0;
 }

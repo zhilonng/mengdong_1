@@ -87,5 +87,10 @@ Page({
       url: '../withdraw/withdraw'
     })
 
+  },
+  turnToRecord: function() {
+    wx.navigateTo({
+      url: '../record/record',
+    })
   }
 })
