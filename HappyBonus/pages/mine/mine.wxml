@@ -4,7 +4,7 @@
 <view class='user_info_container'>
 <view class='user_info_container2'>
 <image class='user_photo' src='{{user_avatar}}'></image>
-<view class='user_name'>康帅富</view>
+<view class='user_name'>{{userInfo.nickName}}</view>
 </view>
 </view>
 
@@ -13,7 +13,7 @@
 <view class='item_container'>
 <view class="item_titile">我的余额</view>
 <view class='space'></view>
-<button class='item_button' type='warn'>提现</button>
+<button class='item_button' type='warn' bindtap="withdrawBtn">提现</button>
 <button class='item_button item_button_white'>明细</button>
 </view>
 
