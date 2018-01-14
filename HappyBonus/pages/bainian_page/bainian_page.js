@@ -1,12 +1,15 @@
-// pages/main/main.js
+// pages/bainian_page/bainian_page.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo:[],
-    user_avatar:'',
+    userInfo: [],
+    user_avatar: '',
+    choseimg: '',
+    picRandName: '',
   },
 
   /**
@@ -14,14 +17,10 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    wx.getUserInfo({
-      success: function (user) {
-        console.log(user)
-        that.setData({
-          userInfo: user.userInfo,
-          user_avatar: user.userInfo.avatarUrl,
-        })
-      }
+    var userInfo = app.globalData.userInfo;
+    that.setData({
+      userInfo: app.globalData.userInfo,
+      user_avatar: app.globalData.userInfo.avatarUrl,
     })
   },
 
@@ -73,10 +72,18 @@ Page({
   onShareAppMessage: function () {
   
   },
-
-  turnToBaiNianPage: function() {
-    wx.navigateTo({
-      url: '../bainian_page/bainian_page',
+  chosePhoto: function () {
+    var that = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['compressed'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
+        that.setData({
+          choseimg: res.tempFilePaths[0],
+          picRandName: Math.random().toString(36).substr(2)
+        })
+      }
     })
-  }
+  },
 })

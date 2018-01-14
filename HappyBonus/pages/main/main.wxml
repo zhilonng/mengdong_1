@@ -16,7 +16,7 @@
 </view>
 </view>
 
-<view class='item_container container_red'>
+<view class='item_container container_red' bindtap="turnToBaiNianPage">
 <view class='item_content_container'>
 <view class='item_title_container titile_container_white'>
 <view class='item_titile_circle circle_red'></view>

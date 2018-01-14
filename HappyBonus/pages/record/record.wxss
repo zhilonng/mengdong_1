@@ -1,4 +1,5 @@
 @import "./record_item/record_item.wxss";
+@import "./record_item/details_item.wxss";
 Page{
   font-family:'PingFang SC Medium',  "微软雅黑";
 }

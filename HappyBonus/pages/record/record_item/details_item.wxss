@@ -1,0 +1,19 @@
+.details_titile_container{
+  display: flex;
+}
+.details_tag{
+  border: 2rpx solid grey;
+  color: grey;
+  border-radius: 25rpx;
+  padding: 5rpx 10rpx 5rpx 10rpx;
+  margin-right: 10rpx;
+}
+.item_details_titile {
+  font-size: 38rpx;
+}
+.item_money_container_1 {
+  display: flex;
+}
+.item_details_money {
+  color: #EE5C42;
+}

@@ -1,0 +1,36 @@
+<view class='background_arc'></view>
+
+<view class='container'>
+<!--titile  -->
+<view class='titile_container'>
+<!--tag  -->
+<view class='item_title_container'>
+<view class='item_titile_circle'></view>
+<view class='item_titile'>拜年</view>
+</view>
+<!--tag  -->
+
+<view class='space'></view>
+<view class='titile_problem'>常见问题</view>
+</view>
+<!--titile  -->
+<!--content  -->
+<view class='content_container'>
+<image class='avatar' src='{{user_avatar}}'></image>
+<image class='user_photo' mode='aspectFill' src='{{choseimg}}' bindtap='chosePhoto'></image>
+<view class="word_space"></view>
+<view class='add_photo_word' wx:if="{{choseimg == ''}}">添加照片</view>
+</view>
+<!--content  -->
+<!--bottom  -->
+<view class='bottom_container'>
+<view class='bottom_titile_container'>
+<view class='bottom_titile'>标题</view>
+<input class='bottom_titile_content' placeholder="恭喜发财，红包拿来！"></input>
+</view>
+<view class='line'></view>
+<view class='bottom_titile_2' style='margin-top:10rpx;'>收到红包后将向您收取1%手续费</view>
+<button class='btn_send' type="warn"> 发起拜年 </button>
+</view>
+<!--bottom  -->
+</view>

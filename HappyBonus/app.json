@@ -11,7 +11,8 @@
     "pages/qr_page/qr_page",
     "pages/record/record",
     "pages/order/order",
-    "pages/withdraw/withdraw"
+    "pages/withdraw/withdraw",
+    "pages/bainian_page/bainian_page"
   ],
   "window": {
     "backgroundTextStyle": "light",
