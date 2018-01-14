@@ -1,4 +1,9 @@
-page{
+page {
+  background: ghostwhite;
+  width: 100%;
+  height: 100%;
+}
+userMoneypage{
 	height:100%;
 	width:100%;
 	background:#edeef0;
@@ -24,37 +29,64 @@ page{
 .userMoney{
 	margin-top:5%;
 	font-weight:blod;
-	font-size:100rpx;
+	font-size:60rpx;
 }
 .medium{
 	display:flex;
 	flex-direction:column;
- 	align-items:center;
-	height:30%;
 	background:#ffffff;
 	width:100%;
+  margin-top: 40rpx;
+}
+.input_digits {
+  width: 60%;
+  font-size: 37rpx;
+  margin: auto 0 auto 20rpx;
+}
+.space {
+  flex:1;
 }
 .inputbox{
-	
-}
-input{
-	border-bottom-width:1rpx;
-    border-bottom-color:#edeef0;
-	text-align:center;
-	float:left;
-	margin-left:5%;
-	width:87%;
-	height:100rpx;
-	font-size:70rpx;
+	display: flex;
 }
 .allbtn{
-	margin-top:1%;
+	margin: auto 20rpx auto 0;
 	color:#97c7e7;
+  font-size: 35rpx;
 }
 .underbox{
-	margin-top:1%;
+	margin:20rpx 0 20rpx 20rpx;
 	width:100%;
 }
 .buttom{
-	height:45%
+	height:45%;
+}
+.line {
+  margin-top: 10rpx;
+  height: 1px;
+  background: ghostwhite;
+}
+.total_money_container {
+  width: 100%;
+  display: flex;
+}
+.money {
+  margin-right: 20rpx;
+  color: #EE5C42;
+  font-size: 35rpx;
+  margin-top: 10rpx;
+}
+.btn_withdraw {
+  margin-top: 70rpx;
+  width: 86%;
+  margin-left: 7%;
+}
+.withdraw_word {
+  width: 50%;
+  text-align: center;
+  margin-top:20rpx;
+}
+.contact_container {
+  display: flex;
+  margin-top: 200rpx;
 }
