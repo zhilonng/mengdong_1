@@ -1,0 +1,68 @@
+<!--pages/sell_adorable_page/sell_adorable_page.wxml-->
+<view class='background_arc'></view>
+
+<view class='card1_container'>
+<image class='card1_photo'></image>
+
+<view class='titile_container'>
+<!--tag  -->
+<view class='item_title_container'>
+<view class='item_titile_circle'></view>
+<view class='item_titile'>卖萌</view>
+</view>
+<!--tag  -->
+</view>
+<!--card_iner  -->
+<view class='card_iner_card1'>
+<view wx:if="{{1==2}}" class='card_iner_card1_2'>
+<view class='money_container'>
+<view style='font-size:40rpx'>¥</view>
+<input class='input_digits' bindinput="inpuCheck" type="digit" confirm-type="done" placeholder="输入红包金额" value="{{allMoney}}"  />
+</view>
+<button class='btn_send' type='warn'> 发送红包 </button>
+<view style='font-size:30rpx;margin-top:20rpx;'>对方可提现到微信零钱</view>
+</view>
+</view>
+<!--card_iner  -->
+<!--card1_bottom  -->
+<view class='card1_bottom_container'>
+<image class='user_avatar' src='{{user_avatar}}'></image>
+<view class='card1_bottom_content'>恭喜发财，红包拿来！</view>
+</view>
+<!--card1_bottom  -->
+</view>
+<!--card2_container  -->
+<view class='card2_container'>
+<!--card2_titile_container  -->
+<view class='card2_titile_container'>
+<view class='record_tag'>卖萌纪录</view>
+<view class='space'></view>
+<!--tag  -->
+<view class='item_title_container' style='background:#EEB422'>
+<view class='item_titile_circle'></view>
+<view class='item_titile'>转发</view>
+</view>
+<!--tag  -->
+</view>
+<!--card2_titile_container  -->
+<!--record_container  -->
+<view wx:for="1,2" class='record_container'>
+<image class='user_avatar'></image>
+<view class='record_content_container'>
+<view class='record_content'>肖锋 给了一个红包</view>
+</view>
+<view class='space'></view>
+<view class='record_time'>01-23 12:34</view>
+</view>
+<!--record_container  -->
+</view>
+<!--card2_container  -->
+
+<view class='empty'></view>
+
+<view class='bottom_container'>
+<view class='more_game'>更多玩法</view>
+<view class='line'></view>
+<view class='more_money'> 999元</view>
+<button class='give_money' type='warn'>萌！买一份</button>
+</view>

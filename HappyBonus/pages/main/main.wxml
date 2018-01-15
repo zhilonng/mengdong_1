@@ -6,7 +6,7 @@
 <image class="avatar" src='{{user_avatar}}'/>
 </view>
 
-<view class='item_container item_top container_white'>
+<view class='item_container item_top container_white' bindtap='turnToSelAdorable'>
 <view class='item_content_container'>
 <view class='item_title_container titile_container_orange'>
 <view class='item_titile_circle circle_white'></view>

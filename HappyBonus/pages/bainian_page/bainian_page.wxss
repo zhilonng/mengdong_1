@@ -55,13 +55,6 @@ page {
   margin: auto 0 auto 10rpx;
   background: white;
 }
-.item_titile_circle {
-  height: 40rpx;
-  width: 40rpx;
-  border-radius: 40rpx;
-  margin: auto 0 auto 10rpx;
-  color: white;
-}
 .item_titile {
   font-size: 35rpx;
   color: white;
