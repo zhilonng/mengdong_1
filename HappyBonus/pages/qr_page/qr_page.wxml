@@ -3,9 +3,13 @@
 	<view class='pic'>
 	    <image class="picture" mode="scaleToFill" src="{{picUrl}}"></image>
 	</view>
-	<view class='actcute'>
-	    {{nickname}} 卖了一个萌
+	<view class='actcute' wx:if="{{type == 1}}">
+	    {{nickname}}  卖了一个萌
 	</view>
+	<view class='actcute' wx:else>
+	    {{nickname}}  向你拜年啦
+	</view>
+
 	<view class="text">
 		{{text}}
 	</view>

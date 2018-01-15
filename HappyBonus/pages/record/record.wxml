@@ -20,9 +20,9 @@
   </view>
 <!--nav  -->
 
-<include wx:if="{{houBaoStyle == 1}}" wx:for="{{receive_count}}" src='./record_item/record_item.wxml'/>
+<include wx:if="{{houBaoStyle == 1}}" wx:for="{{receive_data}}" src='./record_item/record_item.wxml'/>
 
-<include wx:if="{{houBaoStyle == 2}}" wx:for="{{send_count}}" src='./record_item/record_item.wxml'/>
+<include wx:if="{{houBaoStyle == 2}}" wx:for="{{send_data}}" src='./record_item/record_item.wxml'/>
 
 <include wx:if="{{houBaoStyle == 3}}" wx:for="{{send_count}}" src='./record_item/details_item.wxml'/>
 <view wx:if="{{houBaoStyle == 3}}" class='item_container'> </view>

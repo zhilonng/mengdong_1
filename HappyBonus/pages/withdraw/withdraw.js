@@ -9,6 +9,7 @@ Page({
     userInfo: [],
     userMoney: 0,
     allMoney:'',
+    withdrawMoney:0,
   },
 
   /**
@@ -98,20 +99,64 @@ Page({
         icon: 'fail',
         duration: 1000
       })
-    }
-    if(e.detail.value!='' && e.detail.value<1){
+      that.setData({
+        withdrawMoney:0
+      })
+    }else if(e.detail.value!='' && e.detail.value<1){
        wx.showToast({
         title: '提现最低一元',
         icon: 'fail',
         duration: 1000
       })
+       that.setData({
+        withdrawMoney:0
+      })
+    }else{
+      console.log(e.detail.value)
+      var money=e.detail.value;
+      money=money.substring(0,money.indexOf(".") + 3);
+      that.setData({
+        withdrawMoney:money,
+        allMoney:money
+      })
     }
-    console.log(e.detail.value)
+    
+    
   },
   allbtn:function (){
     var that=this;
     that.setData({
-      allMoney:that.data.userMoney
+      allMoney:that.data.userMoney,
+      withdrawMoney:that.data.userMoney
     })
   },
+  withdrawBtn:function(){
+    var that=this;
+    if(that.data.withdrawMoney<=that.data.userMoney && that.data.withdrawMoney>=1 && that.data.withdrawMoney!=''){
+      console.log('可以提现了')
+      wx.request({
+      url: 'https://baby.mamid.cn/User/Pay/withdraw', //仅为示例，并非真实的接口地址
+      method: 'POST',
+      data:{
+        user_id:that.data.userInfo.user_id,
+        money:that.data.withdrawMoney
+      },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+        console.log(res.data)
+      },
+      fail:function (res){
+        console.log('fale'+res.data)
+      }
+      })
+    }else{
+      wx.showToast({
+        title: '请输入正确金额',
+        icon: 'fail',
+        duration: 1000
+      })
+    }
+  }
 })

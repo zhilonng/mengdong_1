@@ -10,6 +10,9 @@ Page({
     user_avatar: '',
     choseimg: '',
     picRandName: '',
+    title:'',
+    token : '',
+    picUrl:''
   },
 
   /**
@@ -21,6 +24,20 @@ Page({
     that.setData({
       userInfo: app.globalData.userInfo,
       user_avatar: app.globalData.userInfo.avatarUrl,
+    })
+    wx.request({
+      url: 'https://baby.mamid.cn/User/Upload/getToken', 
+      method: 'POST',
+      data: {},
+      header: { 
+        'content-type':'application/x-www-form-urlencoded'
+      },
+      success: function(res) {
+        console.log(res.data)
+        that.setData({
+          token:res.data,
+        })
+      }
     })
   },
 
@@ -86,4 +103,79 @@ Page({
       }
     })
   },
+  titleinput:function (e) {
+    var that=this;
+    console.log(e.detail.value)
+    var con=e.detail.value;
+    if(con!=''){
+      that.setData({
+        title:con
+      })
+    }else{
+      that.setData({
+        title:'恭喜发财，红包拿来'
+      })
+    }
+  },
+  orderbtn: function () {
+    var that=this;
+    var upload = function() {
+    console.log('开始上传图片了')
+    wx.uploadFile({
+      url: 'https://up.qbox.me',
+      filePath: that.data.choseimg,
+      name: 'file',
+      formData: {
+          'key': that.data.picRandName ,
+          'token': that.data.token
+      },
+      success: function(result) {
+          console.log(result)
+          if(result.statusCode==200){
+            that.setData({
+              picUrl:'http://p2bl4mkhf.bkt.clouddn.com/'+that.data.picRandName,
+            })
+            createOrder();
+          }
+      },
+      fail: function(error) {
+          console.log(error)
+          wx.showToast({
+            title: '图片上传失败',
+            icon: 'loading',
+            duration: 2000
+          })
+      }
+    })
+    }
+    var createOrder=function () {
+      var title=that.data.title==''?'恭喜发财，红包拿来':that.data.title;
+      wx.request({
+        url: 'https://baby.mamid.cn/User/Order/createOrder', //仅为示例，并非真实的接口地址
+        method: 'POST',
+        data:{
+          uid:that.data.userInfo.user_id,
+          picUrl:that.data.picUrl,
+          qrcodeUrl:'',
+          order_type:2,
+          text:title,
+          price:0
+        },
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        success: function (res) {
+          wx.redirectTo({
+            url: '../qr_page/qr_page?order_id='+res.data.order_id,
+          })
+        },
+        fail:function (res){
+          console.log('fale'+res.data)
+        }
+      })
+    }
+    if(that.data.choseimg.length!=0){
+      upload();
+    }
+  }
 })

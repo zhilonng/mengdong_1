@@ -10,6 +10,7 @@ Page({
   price:'',
   order_id:'',
   nickname:'',
+  type:'',
   },
 
   /**
@@ -31,6 +32,7 @@ Page({
         text:res.data.text,
         price:res.data.price,
         nickname:getApp().globalData.userInfo.nickName,
+        type:res.data.order_type,
       })
     }
     })
@@ -84,17 +86,35 @@ Page({
      onShareAppMessage: function () {
       var that=this;
       var user_id=getApp().globalData.userInfo.user_id
-      var name = ''
-      return {
-        title: getApp().globalData.userInfo.nickName+' 卖了一个萌',
-        desc: that.data.text,
-        path: '/pages/order/order?id='+that.data.order_id,
-        success: function(res) {
-        // 转发成功
-        },
-        fail: function(res) {
-          // 转发失败
+      var str='';
+      var type=that.data.type;
+      if(type==1){
+        str=' 卖了一个萌'
+         return {
+          title: getApp().globalData.userInfo.nickName+str,
+          desc: that.data.text,
+          path: '/pages/order/order?id='+that.data.order_id,
+          success: function(res) {
+          // 转发成功
+          },
+          fail: function(res) {
+            // 转发失败
+          }
+        }
+      }else{
+        str=' 向你拜年啦'
+         return {
+          title: getApp().globalData.userInfo.nickName+str,
+          desc: that.data.text,
+          path: '/pages/bainian_page/bainian_page?id='+that.data.order_id,
+          success: function(res) {
+          // 转发成功
+          },
+          fail: function(res) {
+            // 转发失败
+          }
         }
       }
+     
   },
 })

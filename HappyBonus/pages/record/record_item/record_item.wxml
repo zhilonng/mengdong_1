@@ -1,20 +1,22 @@
 <view class='item_container'>
-<image class='item_photo'>头像</image>
-<view class='item_details' style='margin: auto 0 auto 25rpx;'>
-<view class='item_money'>标题标题标题</view>
-<view class='item_time item_titile_2'>价格9元，共卖萌6份</view>
-</view>
-<view class='space'></view>
-<view class='item_details'>
-<view class='item_money_container'>
-<view class='space'></view>
+	<image class='item_photo' src="{{item.picurl}}">头像</image>
+	<view class='item_details' style='margin: auto 0 auto 25rpx;'>
+		<view class='item_money'>{{item.text}}</view>
+		<view wx:if="{{item.show_type ==1}}" class='item_time item_titile_2'>价格{{item.price}}元，共卖萌{{item.re_count}}份</view>
+		<view wx:elif="{{item.order_type ==1}}" class='item_time item_titile_2'>{{item.price}}元</view>
+		<view wx:else class='item_time item_titile_2'>发红包{{item.price}}元</view>
+		</view>
+		<view class='space'></view>
+		<view class='item_details'>
+		<view class='item_money_container'>
+		<view class='space'></view>
 
-<view class='item_money_container_1'>
-<view class='space'></view>
-<view class='details_tag_orange'>卖萌</view>
-</view>
-
-<view class='item_time'>01-23 12:34</view>
-</view>
-</view>
+		<view class='item_money_container_1'>
+		<view class='space'></view>
+		<view wx:if="{{item.order_type == 1}}" class='details_tag_orange' >卖萌</view>
+		<view wx:else class='details_tag_orange' >拜年</view>
+		</view>
+		<view class='item_time'>{{item.create_time}}</view>
+		</view>
+	</view>
 </view>

@@ -26,7 +26,7 @@
     </view>
 	</view>
 
-	<button class='btn_withdraw' type='primary'>提现</button>
+	<button class='btn_withdraw' type='primary' bindtap="withdrawBtn">提现</button>
 
   <view class='withdraw_word'>提现金额将在1-3个工作日内打到您的微信零钱当中</view>
 

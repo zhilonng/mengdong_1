@@ -30,19 +30,25 @@
 					"id": 0,
 					"name": "分享页面",
 					"pathName": "pages/qr_page/qr_page",
-					"query": "order_id=26"
+					"query": "order_id=46"
 				},
 				{
 					"id": 1,
 					"name": "点击分享页面",
 					"pathName": "pages/order/order",
-					"query": "id=26"
+					"query": "id=41"
 				},
 				{
 					"id": -1,
 					"name": "提现",
 					"pathName": "pages/withdraw/withdraw",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分享页面",
+					"pathName": "pages/bainian_page/bainian_page",
+					"query": "id=46"
 				}
 			]
 		}

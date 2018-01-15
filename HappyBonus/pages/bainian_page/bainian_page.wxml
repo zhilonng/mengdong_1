@@ -26,11 +26,11 @@
 <view class='bottom_container'>
 <view class='bottom_titile_container'>
 <view class='bottom_titile'>标题</view>
-<input class='bottom_titile_content' placeholder="恭喜发财，红包拿来！"></input>
+<input class='bottom_titile_content' placeholder="恭喜发财，红包拿来" value="{{title}}" bindinput="titleinput"></input>
 </view>
 <view class='line'></view>
 <view class='bottom_titile_2' style='margin-top:10rpx;'>收到红包后将向您收取1%手续费</view>
-<button class='btn_send' type="warn"> 发起拜年 </button>
+<button class='btn_send' type="warn" bindtap="orderbtn"> 发起拜年 </button>
 </view>
 <!--bottom  -->
 </view>
