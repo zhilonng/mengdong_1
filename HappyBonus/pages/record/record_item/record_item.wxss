@@ -8,7 +8,6 @@
 .item_photo {
   width: 90rpx;
   height: 90rpx;
-  background: red;
   margin: auto 0 auto 25rpx;
 }
 .item_titile_2 {
