@@ -10,6 +10,7 @@ Page({
     userMoney: 0,
     allMoney:'',
     withdrawMoney:0,
+    has_withdraw:0,
   },
 
   /**
@@ -44,7 +45,9 @@ Page({
       success: function (res) {
         console.log(res.data)
         that.setData({
-          userMoney: res.data.user_money
+          userMoney: res.data.user_money,
+          has_withdraw:res.data.has_withdraw,
+
         })
       }
     })
@@ -114,7 +117,9 @@ Page({
     }else{
       console.log(e.detail.value)
       var money=e.detail.value;
-      money=money.substring(0,money.indexOf(".") + 3);
+      if(money.indexOf(".")!=-1){
+        money=money.substring(0,money.indexOf(".") + 3);
+      }
       that.setData({
         withdrawMoney:money,
         allMoney:money
@@ -133,6 +138,7 @@ Page({
   withdrawBtn:function(){
     var that=this;
     if(that.data.withdrawMoney<=that.data.userMoney && that.data.withdrawMoney>=1 && that.data.withdrawMoney!=''){
+      wx.showLoading();
       console.log('可以提现了')
       wx.request({
       url: 'https://baby.mamid.cn/User/Pay/withdraw', //仅为示例，并非真实的接口地址
@@ -145,17 +151,37 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       success: function (res) {
+        wx.hideLoading()
         console.log(res.data)
+        if(res.data.statusCode==200){
+          wx.showModal({
+            title: '提示',
+            content: '提现成功,预计1-3个工作日内到账',
+            showCancel:false,
+            success: function(res) {
+              var last_money=(that.data.userMoney*100)-(that.data.withdrawMoney*100);
+              last_money/=100;
+              var all_withdraw=(that.data.has_withdraw*100)+(that.data.withdrawMoney*100);
+              all_withdraw/=100;
+              that.setData({
+                userMoney:last_money,
+                allMoney:'',
+                has_withdraw:all_withdraw,
+              })
+            }
+          })
+        }
       },
       fail:function (res){
+        wx.hideToast()
         console.log('fale'+res.data)
       }
       })
     }else{
-      wx.showToast({
-        title: '请输入正确金额',
-        icon: 'fail',
-        duration: 1000
+      wx.showModal({
+        title: '提现提示',
+        content: '提现金额需大于1元',
+        showCancel:false
       })
     }
   }

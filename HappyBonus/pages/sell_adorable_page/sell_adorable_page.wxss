@@ -86,8 +86,8 @@ page {
   margin-top: 40rpx;
 }
 .input_digits {
-  margin-left: 20rpx;
-  width: 250rpx;
+  font-weight:blod;
+  font-size:50rpx;
 }
 .btn_send {
   width: 86%; 
@@ -150,12 +150,12 @@ page {
 }
 .record_content {
   color: grey;
-  font-size: 35rpx;
+  font-size: 30rpx;
 }
 .record_time {
   color: gray;
   font-size: 30rpx;
-  margin: auto 20rpx auto 0;
+  margin: auto 5rpx auto 0;
 }
 .account {
   font-size: 40rpx;

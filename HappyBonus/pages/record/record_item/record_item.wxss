@@ -37,3 +37,10 @@
   padding: 5rpx 20rpx;
   font-size: 32rpx;
 }
+.details_tag_red{
+  background: #E64447;
+  color: white;
+  border-radius: 25rpx;
+  padding: 5rpx 20rpx;
+  font-size: 32rpx;
+}

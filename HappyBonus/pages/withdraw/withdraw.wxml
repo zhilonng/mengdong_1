@@ -19,10 +19,10 @@
     <view class='line'></view>
     <view class='total_money_container'>
 		<view class="underbox">
-			提现中的金额
+			已提现金额
 		</view>
     <view class='space'></view>
-    <view class='money'>0.00</view>
+    <view class='money'>{{has_withdraw}}</view>
     </view>
 	</view>
 

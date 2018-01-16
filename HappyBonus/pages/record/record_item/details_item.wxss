@@ -16,4 +16,13 @@
 }
 .item_details_money {
   color: #EE5C42;
+  font-weight:blod;
+  font-size:40rpx;
+  margin-right:10%;
+}
+.item_details_money_less{
+	color:#038e34;
+	font-weight:blod;
+	font-size:40rpx;
+	  margin-right:10%;
 }

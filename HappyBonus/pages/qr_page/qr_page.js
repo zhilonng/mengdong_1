@@ -17,22 +17,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     var that=this;
     that.setData({
       order_id:options.order_id
     })
     wx.request({
-    url: 'https://baby.mamid.cn/User/Order/shareGetOrder/order_id/'+that.data.order_id, //仅为示例，并非真实的接口地址
+    url: 'https://baby.mamid.cn/User/Order/shareGetOrder/order_id/'+options.order_id, //仅为示例，并非真实的接口地址
     method:'get',
     success: function(res) {
       console.log(getApp().globalData)
       console.log(res.data)
+      var data=res.data.show
       that.setData({
-        picUrl:res.data.picurl,
-        text:res.data.text,
-        price:res.data.price,
+        picUrl:data.picurl,
+        text:data.text,
+        price:data.price,
         nickname:getApp().globalData.userInfo.nickName,
-        type:res.data.order_type,
+        type:data.order_type,
       })
     }
     })
@@ -88,12 +90,13 @@ Page({
       var user_id=getApp().globalData.userInfo.user_id
       var str='';
       var type=that.data.type;
+      //可以合并
       if(type==1){
         str=' 卖了一个萌'
          return {
           title: getApp().globalData.userInfo.nickName+str,
           desc: that.data.text,
-          path: '/pages/order/order?id='+that.data.order_id,
+          path: '/pages/sell_adorable_page/sell_adorable_page?id='+that.data.order_id,
           success: function(res) {
           // 转发成功
           },
@@ -106,7 +109,7 @@ Page({
          return {
           title: getApp().globalData.userInfo.nickName+str,
           desc: that.data.text,
-          path: '/pages/bainian_page/bainian_page?id='+that.data.order_id,
+          path: '/pages/newyear_lucky_page/newyear_lucky_page?id='+that.data.order_id,
           success: function(res) {
           // 转发成功
           },

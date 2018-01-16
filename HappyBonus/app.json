@@ -14,7 +14,8 @@
     "pages/withdraw/withdraw",
     "pages/bainian_page/bainian_page",
     "pages/sell_adorable_page/sell_adorable_page",
-    "pages/newyear_lucky_page/newyear_lucky_page"
+    "pages/newyear_lucky_page/newyear_lucky_page",
+    "pages/maimeng_page/maimeng_page"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -9,6 +9,7 @@ Page({
     send_count: 2,
     receive_data:[],
     send_data:[],
+    detail_data:[],
   },
   //事件处理函数
   ChangeTab: function (e) {
@@ -29,6 +30,7 @@ Page({
         that.setData({
           receive_data:res.data.receive,
           send_data:res.data.send,
+          detail_data:res.data.detail,
         })
       },
       fail:function (res){
@@ -36,6 +38,20 @@ Page({
       }
     })
   },
+  turnTopage:function (e) {
+    console.log(e)
+    var id=e.currentTarget.dataset.index
+    var type=e.currentTarget.dataset.type
+    if(type==1){
+      var url='../sell_adorable_page/sell_adorable_page?id='+id
+    }else{
+      var url='../newyear_lucky_page/newyear_lucky_page?id='+id
+    }
+    wx.navigateTo({
+      url: url 
+    })
+
+  }
 
 
 })

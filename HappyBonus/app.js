@@ -80,7 +80,6 @@ App({
   },
   globalData: {
     userInfo: [],
-    localApi:'',
     
   },
   // 登录

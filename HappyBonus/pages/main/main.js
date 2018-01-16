@@ -82,7 +82,7 @@ Page({
 
   turnToSelAdorable: function() {
     wx.navigateTo({
-      url: '../sell_adorable_page/sell_adorable_page',
+      url: '../maimeng_page/maimeng_page',
     })
   }
 })
