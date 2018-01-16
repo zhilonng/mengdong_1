@@ -13,6 +13,7 @@ Page({
   user_avatar:'',
   record:[],
   showBuybox:0,
+  clickDialog:0,
   },
 
   /**
@@ -125,10 +126,8 @@ Page({
              'complete':function(res){
                   console.log(res)
                   if(res.errMsg=='requestPayment:ok'){
-                      wx.showToast({
-                        title: '支付成功',
-                        icon: 'success',
-                        duration: 2000
+                      that.setData({
+                        showBuybox:2,
                       })
                   }else{
                       wx.showToast({
@@ -181,13 +180,8 @@ Page({
                   console.log(res)
                   if(res.errMsg=='requestPayment:ok'){
                     that.setData({
-                      showBuybox:0
+                      showBuybox:2
                     })
-                      wx.showToast({
-                        title: '支付成功',
-                        icon: 'success',
-                        duration: 2000
-                      })
                   }else{
                       wx.showToast({
                         title: '支付失败',
@@ -228,5 +222,41 @@ Page({
          // 转发失败
         }
     }
+  },
+
+  closeOrPreview:function() {
+    var that = this;
+    if (that.data.showBuybox == 1) {
+      if (that.data.clickDialog == 0) {
+      that.setData({
+        showBuybox:0,
+      })
+    } else {
+      that.setData({
+        clickDialog: 0,
+      })
+    }
+    } else {
+      wx.previewImage({
+        current: that.data.picUrl, // 当前显示图片的http链接
+        urls: [that.data.picUrl] // 需要预览的图片http链接列表
+      })
+    }
+  },
+  clickDialog:function() {
+    var that = this;
+    that.setData({
+      clickDialog:1,
+    })
+  },
+  turnToRecord:function() {
+    wx.navigateTo({
+      url: '../record/record',
+    })
+  },
+  turnToBaiNian:function() {
+    wx.navigateTo({
+      url: '../bainian_page/bainian_page',
+    })
   },
 })

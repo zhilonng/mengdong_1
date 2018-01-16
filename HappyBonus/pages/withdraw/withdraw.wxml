@@ -31,7 +31,7 @@
   <view class='withdraw_word'>提现金额将在1-3个工作日内打到您的微信零钱当中</view>
 
   <view class='contact_container'>
-  <view>常见问题</view>
+  <view bindtap='turnToCommonProblem'>常见问题</view>
   <view style='margin-left:10rpx'>|</view>
   <view style='margin-left:10rpx'>联系客服</view>
   </view>

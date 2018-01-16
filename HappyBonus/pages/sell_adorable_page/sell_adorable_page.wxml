@@ -1,7 +1,7 @@
 <!--pages/sell_adorable_page/sell_adorable_page.wxml-->
 <view class='background_arc'></view>
 
-<view class='card1_container'>
+<view bindtap='closeOrPreview' class='card1_container'>
 <image class='card1_photo' src="{{picUrl}}"></image>
 
 <view class='titile_container'>
@@ -13,7 +13,7 @@
 <!--tag  -->
 </view>
 <!--card_iner  -->
-<view class='card_iner_card1'>
+<view bindtap='clickDialog' class='card_iner_card1'>
 <view wx:if="{{showBuybox==1}}" class='card_iner_card1_2'>
 <view class='money_container'>
 <view style='font-size:50rpx'>¥</view>
@@ -21,6 +21,17 @@
 </view>
 <button class='btn_send' type='warn' bindtap="payBtn"> 点击支付 </button>
 <view style='font-size:30rpx;margin-top:20rpx;'>对方可提现到微信零钱</view>
+</view>
+<view wx:if="{{showBuybox==2}}" class='card_iner_card1_2'>
+<view class='money_container'>
+<view style='font-size:40rpx'>发送红包成功</view>
+</view>
+<button class='btn_send' type='warn' bindtap="payBtn" style='background:#EEB422' bindtap='turnToRecord'> 查看纪录 </button>
+<view class='user_option_container'>
+<view style='color:#EE5C42' bindtap='turnToBaiNian'>我也要拜年</view>
+<view class='space'></view>
+<view bindtap='more_game'>更多玩法</view>
+</view>
 </view>
 </view>
 <!--card_iner  -->
@@ -41,7 +52,7 @@
 <!--tag  -->
 <button class='item_title_container' open-type="share" style='background:#EEB422'>
 <view class='item_titile_circle'></view>
-<view class='item_titile'>转发</view>
+<view class='item_titile' style='margin-top: -12rpx;'>转发</view>
 </button>
 <!--tag  -->
 </view>

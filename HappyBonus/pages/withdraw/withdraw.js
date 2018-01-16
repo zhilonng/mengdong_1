@@ -184,5 +184,10 @@ Page({
         showCancel:false
       })
     }
+  },
+  turnToCommonProblem:function() {
+    wx.navigateTo({
+      url: '../common_problem_page/common_problem_page',
+    })
   }
 })
