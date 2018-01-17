@@ -104,7 +104,7 @@ Page({
     var that=this;
     that.setData({
       showBuybox:1,
-      clickDialog:1,
+      clickDialog:0,
     })
   },
   payBtn:function () {

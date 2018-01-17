@@ -13,7 +13,8 @@
 <!--tag  -->
 </view>
 <!--card_iner  -->
-<view class='card_iner_card1' wx:if="{{showBuybox==1}}">
+<view bindtap='clickDialog' class='card_iner_card1'>
+<view class='card_iner_card1_2' wx:if="{{showBuybox==1}}">
 <view class='money_container'>
 <view style='font-size:40rpx'>¥</view>
 <input class='input_digits' bindinput="inpuCheck" type="digit" confirm-type="done" placeholder="" value="{{price}}"  />
@@ -31,6 +32,7 @@
 		<view class='space'></view>
 		<view bindtap='more_game'>更多玩法</view>
 	</view>
+</view>
 </view>
 <!--card_iner  -->
 <!--card1_bottom  -->
