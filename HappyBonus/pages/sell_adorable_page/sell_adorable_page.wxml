@@ -23,15 +23,15 @@
 <view style='font-size:30rpx;margin-top:20rpx;'>对方可提现到微信零钱</view>
 </view>
 <view wx:if="{{showBuybox==2}}" class='card_iner_card1_2'>
-<view class='money_container'>
-<view style='font-size:40rpx'>发送红包成功</view>
-</view>
-<button class='btn_send' type='warn' bindtap="payBtn" style='background:#EEB422' bindtap='turnToRecord'> 查看纪录 </button>
-<view class='user_option_container'>
-<view style='color:#EE5C42' bindtap='turnToBaiNian'>我也要拜年</view>
-<view class='space'></view>
-<view bindtap='more_game'>更多玩法</view>
-</view>
+	<view class='money_container'>
+		<view style='font-size:40rpx'>买萌成功</view>
+	</view>
+	<button class='btn_send' type='warn' bindtap="payBtn" style='background:#EEB422' bindtap='turnToRecord'> 查看纪录 </button>
+	<view class='user_option_container'>
+		<view style='color:#EE5C42' bindtap='turnToBaiNian'>我也要卖萌</view>
+		<view class='space'></view>
+		<view bindtap='more_game'>更多玩法</view>
+	</view>
 </view>
 </view>
 <!--card_iner  -->

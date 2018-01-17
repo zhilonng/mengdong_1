@@ -112,10 +112,6 @@ Page({
       that.setData({
         title:con
       })
-    }else{
-      that.setData({
-        title:'准备好红包,我来卖萌啦!'
-      })
     }
   },
   orderbtn: function () {
@@ -187,10 +183,10 @@ Page({
       })
     }
     if(that.data.choseimg.length!=0){
-      if(that.data.price=='' || that.data.price==0 || that.data.price>50000){
+      if(that.data.price=='' || that.data.price==0 || that.data.price>999){
         wx.showModal({
           title: '卖萌提醒',
-          content: '价格需要大于0元且小于5万',
+          content: '价格需要大于0元且小于999',
           showCancel:false
         })
       }else{
@@ -209,18 +205,18 @@ Page({
   },
   priceinput: function (e){
     var that=this;
-    console.log(e.detail.value)
     var money=e.detail.value;
-    if(parseInt(money)==0){
-      wx.showToast({
-        title: '价格需大于0',
+    if(money>999){
+       wx.showToast({
+        title: '价格最高999',
         icon: 'fail',
         duration: 1000
       })
-    }
-    if(money.indexOf(".")!=-1){
+      money=999
+    }else if(money.indexOf(".")!=-1){
       money=money.substring(0,money.indexOf(".") + 3);
     }
+    console.log(money)
     that.setData({
       price:money,
     })

@@ -111,10 +111,6 @@ Page({
       that.setData({
         title:con
       })
-    }else{
-      that.setData({
-        title:'恭喜发财，红包拿来'
-      })
     }
   },
   orderbtn: function () {
