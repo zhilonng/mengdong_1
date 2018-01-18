@@ -14,7 +14,7 @@
 <view class="item_titile">我的余额</view>
 <view class='space'></view>
 <button class='item_button' type='warn' bindtap="withdrawBtn">提现</button>
-<button class='item_button item_button_white'>明细</button>
+<button class='item_button item_button_white' bindtap="turnToMoneyrecord">明细</button>
 </view>
 
 <view class='item_container' bindtap='turnToRecord'>

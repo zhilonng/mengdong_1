@@ -21,6 +21,9 @@ Page({
      userInfo: app.globalData.userInfo,
      user_avatar: app.globalData.userInfo.avatarUrl,
    })
+   wx.setNavigationBarTitle({
+      title: '个人主页'
+      })
   },
 
   /**
@@ -91,6 +94,11 @@ Page({
   turnToRecord: function() {
     wx.navigateTo({
       url: '../record/record',
+    })
+  },
+  turnToMoneyrecord:function (){
+    wx.navigateTo({
+      url: '../money_record_page/money_record_page',
     })
   }
 })

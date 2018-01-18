@@ -37,6 +37,9 @@ Page({
         console.log('fale'+res.data)
       }
     })
+    wx.setNavigationBarTitle({
+      title: '个人记录'
+      })
   },
   turnTopage:function (e) {
     console.log(e)

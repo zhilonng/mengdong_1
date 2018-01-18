@@ -16,12 +16,13 @@
     "pages/sell_adorable_page/sell_adorable_page",
     "pages/newyear_lucky_page/newyear_lucky_page",
     "pages/maimeng_page/maimeng_page",
-    "pages/common_problem_page/common_problem_page"
+    "pages/common_problem_page/common_problem_page",
+    "pages/money_record_page/money_record_page"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#EE5C42",
-    "navigationBarTitleText": "讨红包",
+    "navigationBarTitleText": "卖萌啦",
     "navigationBarTextStyle": "#fff",
     "enablePullDownRefresh": "true"
   },

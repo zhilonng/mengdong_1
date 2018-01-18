@@ -23,6 +23,9 @@ Page({
         })
       }
     })
+    wx.setNavigationBarTitle({
+      title: '卖萌啦'
+      })
   },
 
   /**

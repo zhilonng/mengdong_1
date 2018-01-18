@@ -11,12 +11,17 @@ Page({
   order_id:'',
   nickname:'',
   type:'',
+  access_token:'',
+  qrcodePic:'',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '二维码生成中',
+    })
     console.log(options)
     var that=this;
     that.setData({
@@ -38,6 +43,24 @@ Page({
       })
     }
     })
+    wx.request({
+      url: 'https://baby.mamid.cn/User/Public/getQrCode/oid/'+that.data.order_id, //仅为示例，并非真实的接口地址
+      method:'get',
+      success: function(res) {
+        if(res.data.statusCode==200){
+          wx.hideLoading()
+          var url='https://baby.mamid.cn'+res.data.qrcodeurl;
+          that.setData({
+            qrcodePic:url
+          })
+        }
+        console.log(res.data)
+       
+      }
+    })
+    wx.setNavigationBarTitle({
+      title: '分享页面'
+      })
   },
 
   /**
@@ -51,7 +74,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
@@ -99,6 +122,9 @@ Page({
           path: '/pages/sell_adorable_page/sell_adorable_page?id='+that.data.order_id,
           success: function(res) {
           // 转发成功
+            wx.redirectTo({
+              url: '../sell_adorable_page/sell_adorable_page?order_id='+res.data.order_id,
+            })
           },
           fail: function(res) {
             // 转发失败
@@ -112,6 +138,9 @@ Page({
           path: '/pages/newyear_lucky_page/newyear_lucky_page?id='+that.data.order_id,
           success: function(res) {
           // 转发成功
+          wx.redirectTo({
+              url: '../newyear_lucky_page/newyear_lucky_page?order_id='+res.data.order_id,
+            })
           },
           fail: function(res) {
             // 转发失败
@@ -120,4 +149,13 @@ Page({
       }
      
   },
+  showqrcode:function (){
+    var that=this;
+    var url=that.data.qrcodePic
+    console.log(url)
+    wx.previewImage({
+      current: url, // 当前显示图片的http链接
+      urls: [url] // 需要预览的图片http链接列表
+  })
+  }
 })

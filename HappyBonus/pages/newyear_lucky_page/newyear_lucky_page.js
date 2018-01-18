@@ -23,9 +23,16 @@ Page({
   onLoad: function (options) {
     console.log(options)
     var that=this;
-    that.setData({
-      order_id:options.id
-    })
+    if(options.scene){
+      that.setData({
+        order_id:options.scene
+      })
+    }else{
+      that.setData({
+        order_id:options.id
+      })
+    }
+    
     wx.request({
     url: 'https://baby.mamid.cn/User/Order/shareGetOrder/order_id/'+that.data.order_id, //仅为示例，并非真实的接口地址
     method:'get',

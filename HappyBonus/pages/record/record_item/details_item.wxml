@@ -5,14 +5,14 @@
 <view class='details_tag' wx:else>红包</view>
 <view class='item_money item_details_titile'>{{item.text}}</view>
 </view>
-<view class='item_time item_titile_2'>{{item.action_time}}</view>
+<view class='item_time item_titile_2'>{{item.create_time}}</view>
 </view>
 <view class='space'></view>
 <view class='item_details'>
 <view class='item_money_container_1'>
 <view class='space'></view>
 <view class='item_money item_details_money' wx:if="{{item.action == 1}}">+{{item.action_money}}</view>
-<view class='item_money item_details_money_less' wx:else>-{{item.action_money}}</view>
+<view class='item_money item_details_money_less' wx:else>-{{item.price}}</view>
 </view>
 <view class='item_time item_details_time' wx:if="{{item.company_fee > 0}}">需扣除手续费:{{item.company_fee}}元</view>
 </view>

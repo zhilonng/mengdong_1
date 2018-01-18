@@ -26,6 +26,9 @@ Page({
       userInfo: app.globalData.userInfo,
       user_avatar: app.globalData.userInfo.avatarUrl,
     })
+    wx.setNavigationBarTitle({
+      title: '卖萌'
+      })
     wx.request({
       url: 'https://baby.mamid.cn/User/Upload/getToken', 
       method: 'POST',

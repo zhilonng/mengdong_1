@@ -14,7 +14,7 @@
 		{{text}}
 	</view>
 	<view class="snsQrcode">
-		<image mode="scaleToFill" src="{{qrcodePic}}"></image>
+		<image mode="widthFix" style="width:250rpx;height:250rpx" bindtap="showqrcode" src="{{qrcodePic}}"></image>
 	</view>
 	<view class="sharebox">
 		<button class="share" type="primary" open-type="share">
