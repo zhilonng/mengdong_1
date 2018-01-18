@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/main/main",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/mine/mine",
+    "pages/classify/classify",
+    "pages/index/Share/ShareHotMoney",
+    "pages/index/Share/share",
+    "pages/index/mRecord/myRecord",
+    "pages/qr_page/qr_page",
+    "pages/order/order",
+    "pages/bainian_page/bainian_page",
+    "pages/sell_adorable_page/sell_adorable_page",
+    "pages/newyear_lucky_page/newyear_lucky_page",
+    "pages/maimeng_page/maimeng_page",
+    "pages/common_problem_page/common_problem_page"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#EE5C42",
+    "navigationBarTitleText": "讨红包",
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": "true"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "selectedColor": "#fe2f5b",
+    "list": [
+      {
+        "iconPath": "pages/image/money.png",
+        "selectedIconPath": "pages/image/money.png",
+        "pagePath": "pages/main/main",
+        "text": "玩法"
+      },
+      {
+        "iconPath": "pages/image/money.png",
+        "selectedIconPath": "pages/image/money.png",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  }
+}

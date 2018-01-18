@@ -1,0 +1,77 @@
+<!--pages/newyear_lucky_page/newyear_lucky_page.wxml-->
+<view class='background_arc'></view>
+
+<view class='card1_container' bindtap='closeOrPreview'>
+<image class='card1_photo' src="{{picUrl}}"></image>
+
+<view class='titile_container'>
+<!--tag  -->
+<view class='item_title_container'>
+<view class='item_titile_circle'></view>
+<view class='item_titile'>拜年</view>
+</view>
+<!--tag  -->
+</view>
+<!--card_iner  -->
+<view class='card_iner_card1' wx:if="{{showBuybox==1}}">
+<view class='money_container'>
+<view style='font-size:40rpx'>¥</view>
+<input class='input_digits' bindinput="inpuCheck" type="digit" confirm-type="done" placeholder="" value="{{price}}"  />
+</view>
+<button class='btn_send' type='warn' bindtap="payBtn"> 发送红包 </button>
+<view style='font-size:30rpx;margin-top:20rpx;'>对方可提现到微信零钱</view>
+</view>
+<view wx:if="{{showBuybox==2}}" class='card_iner_card1_2'>
+	<view class='money_container'>
+		<view style='font-size:40rpx'>发送红包成功</view>
+	</view>
+	<button class='btn_send' type='warn' bindtap="payBtn" style='background:#EEB422' bindtap='turnToRecord'> 查看纪录 </button>
+	<view class='user_option_container'>
+		<view style='color:#EE5C42' bindtap='turnToBaiNian'>我也要拜年</view>
+		<view class='space'></view>
+		<view bindtap='more_game'>更多玩法</view>
+	</view>
+</view>
+<!--card_iner  -->
+<!--card1_bottom  -->
+<view class='card1_bottom_container'>
+<image class='user_avatar' src='{{user_avatar}}'></image>
+<view class='card1_bottom_content'>{{text}}</view>
+</view>
+<!--card1_bottom  -->
+</view>
+<!--card2_container  -->
+<view class='card2_container'>
+<!--card2_titile_container  -->
+<view class='card2_titile_container'>
+<view class='record_tag' wx:if="{{record == ''}}">暂无红包纪录</view>
+<view class='record_tag' wx:else>红包纪录</view>
+<view class='space'></view>
+<!--tag  -->
+<button class='item_title_container' open-type="share" style='background:#EEB422'>
+<view class='item_titile_circle'></view>
+<view class='item_titile' style='margin-top: -12rpx;'>转发</view>
+</button>
+<!--tag  -->
+</view>
+<!--card2_titile_container  -->
+<!--record_container  -->
+<view wx:for="{{record}}" class='record_container'>
+<image class='user_avatar'  src="{{item.buy_useravatar}}"></image>
+<view class='record_content_container'>
+<view class='record_content'>{{item.buy_username}} 给了一个红包</view>
+<view class='record_time'>{{item.buy_time}}</view>
+</view>
+<view class='space'></view>
+<view class='account'>{{item.pay_price}}元</view>
+</view>
+<!--record_container  -->
+</view>
+<!--card2_container  -->
+
+<view class='empty'></view>
+
+<view class='bottom_container'>
+<view class='more_game' bindtap='more_game'>更多玩法</view>
+<button class='give_money' type='warn'  bindtap="buyBtn">给个红包</button>
+</view>

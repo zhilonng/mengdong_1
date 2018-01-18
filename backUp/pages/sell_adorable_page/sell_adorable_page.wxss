@@ -1,0 +1,213 @@
+/* pages/sell_adorable_page/sell_adorable_page.wxss */
+page {
+  background: #EEB422;
+  height: 100%;
+  width: 100%;
+}
+.background_arc {
+  position: relative;
+  width: 100%;
+  height: 60rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #EE5C42;
+  z-index: -1;
+}
+.background_arc:after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -100px;
+  z-index: -1;
+  content: ' ';
+  height: 110px;
+  width: 100%;
+  border-radius: 0 0 50% 50%;
+  background-color: #EE5C42;
+}
+
+.card1_container {
+  width: 96%;
+  margin-left: 2%;
+  height: 60%;
+  border-radius: 35rpx;
+}
+.card1_photo {
+  position: absolute;
+  height: 60%;
+  width: 96%;
+  border-radius: 35rpx;
+  background: gray;
+  z-index: -1;
+}
+.titile_container {
+  width: 100%;
+  height: 10%;
+  padding-top: 20rpx;
+  padding-left: 20rpx;
+  z-index: 1;
+}
+.item_title_container{
+  height: 60rpx;
+  width: 140rpx;
+  display: flex;
+  background: #EEB422;
+  border-radius: 30rpx;
+  z-index: 1;
+  padding:0rpx;
+}
+.item_titile_circle {
+  height: 40rpx;
+  width: 40rpx;
+  border-radius: 40rpx;
+  margin: auto 0 auto 10rpx;
+  background: white;
+}
+.item_titile {
+  font-size: 35rpx;
+  color: white;
+  margin: auto 10rpx auto 10rpx;
+}
+.card_iner_card1 {
+  width: 86%;
+  height: 40%;
+  margin-left: 7%;
+  margin-top: 20%;
+  z-index: 1;
+}
+.card_iner_card1_2 {
+  border-radius: 35rpx;
+  display: flex;
+  flex-direction:column;
+ 	align-items:center;
+  background: white;
+  padding-bottom: 20rpx;
+  z-index:2;
+}
+.money_container {
+  display: flex;
+  margin-top: 40rpx;
+}
+.input_digits {
+  font-weight:blod;
+  font-size:50rpx;
+}
+.btn_send {
+  width: 86%; 
+  border-radius: 25rpx;
+  margin-top: 20rpx;
+}
+.user_option_container {
+  display: flex;
+  width: 86%;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+.card1_bottom_container {
+  width: 100%;
+  height: 15%;
+  background: #EE5C42;
+  z-index: 1;
+  margin-top: 20%;
+  border-radius: 0 0 35rpx 35rpx;
+  display: flex;
+}
+.user_avatar {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 80rpx;
+  background: gray;
+  margin: auto 0 auto 20rpx;
+}
+.card1_bottom_content {
+  margin: auto 0 auto 20rpx;
+  color: white;
+  font-size: 38rpx;
+}
+
+.card2_container {
+  width: 96%;
+  margin-left: 2%;
+  border-radius: 35rpx;
+  background: white;
+  margin-top: 100rpx;
+  padding-bottom: 30rpx;
+}
+.card2_titile_container {
+  width: 94%;
+  margin-left: 3%;
+  display: flex;
+  padding-top: 20rpx;
+}
+.record_tag {
+  margin: auto 0 auto 0;
+}
+.space {
+  flex: 1;
+}
+.record_container {
+  height: 100rpx;
+  width: 94%;
+  margin-left: 3%;
+  display: flex;
+  background: gainsboro;
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+}
+.record_content_container {
+  margin: auto 0 auto 20rpx;
+}
+.record_content {
+  color: grey;
+  font-size: 28rpx;
+}
+.record_time {
+  color: gray;
+  font-size: 30rpx;
+  margin: auto 5rpx auto 0;
+}
+.account {
+  font-size: 40rpx;
+  color: #EE5C42;
+  margin: auto 20rpx auto 0;
+}
+.bottom_container {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  height: 7%;
+  width: 100%;
+  background: red;
+  border-top: 2rpx solid gray;
+}
+.more_game {
+  text-align: center;
+  height: 100%;
+  width: 35%;
+  background: white;
+  padding-top: 20rpx;
+}
+.more_money {
+  width: 25%;
+  text-align: center;
+  height: 100%;
+  background: white;
+  padding-top: 20rpx;
+  color: #EE5C42;
+}
+.line {
+  height: 100%;
+  width: 0.2%;
+  background: grey;
+}
+.give_money {
+  height: 100%;
+  width: 39.8%;
+  border-radius: 0;
+  border-left: 1px solid grey
+}
+
+.empty {
+  width: 100%;
+  height: 20%;
+}

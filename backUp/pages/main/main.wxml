@@ -1,0 +1,57 @@
+<!--pages/main/main.wxml-->
+<view class='background_arc'></view>
+<view class='titile_container'>
+<view class='titile'>玩法</view>
+<view class='space'></view>
+<image class="avatar" src='{{user_avatar}}'/>
+</view>
+
+<view class='item_container item_top container_white' bindtap='turnToSelAdorable'>
+<view class='item_content_container'>
+<view class='item_title_container titile_container_orange'>
+<view class='item_titile_circle circle_white'></view>
+<view class='item_titile titile_white'>卖萌</view>
+</view>
+<view class="item_content">准备好红包，我来卖萌啦！</view>
+</view>
+</view>
+
+<view class='item_container container_red' bindtap="turnToBaiNianPage">
+<view class='item_content_container'>
+<view class='item_title_container titile_container_white'>
+<view class='item_titile_circle circle_red'></view>
+<view class='item_titile titile_red'>拜年</view>
+</view>
+<view class="item_content content_white">恭喜发财，红包拿来！</view>
+</view>
+</view>
+
+<view class='item_container container_white'>
+<view class='item_content_container'>
+<view class='item_title_container titile_container_purple'>
+<view class='item_titile_circle circle_white'></view>
+<view class='item_titile'>买懂</view>
+</view>
+<view class="item_content">不懂我，一毛钱都不给！</view>
+</view>
+</view>
+
+<view class='item_container container_white'>
+<view class='item_content_container'>
+<view class='item_title_container titile_container_blue'>
+<view class='item_titile_circle circle_white'></view>
+<view class='item_titile'>领养机器人</view>
+</view>
+<view class="item_content">朋友圈的智能好友</view>
+</view>
+</view>
+
+<view class='item_container container_white'>
+<view class='item_content_container'>
+<view class='item_title_container titile_container_red'>
+<view class='item_titile_circle circle_white'></view>
+<view class='item_titile'>答题大会</view>
+</view>
+<view class="item_content">快来挑战，答对就有奖!</view>
+</view>
+</view>

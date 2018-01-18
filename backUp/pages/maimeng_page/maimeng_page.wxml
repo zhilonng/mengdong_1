@@ -1,0 +1,42 @@
+<view class='background_arc'></view>
+
+<view class='container'>
+<!--titile  -->
+<view class='titile_container'>
+<!--tag  -->
+<view class='item_title_container'>
+<view class='item_titile_circle'></view>
+<view class='item_titile'>卖萌</view>
+</view>
+<!--tag  -->
+
+<view class='space'></view>
+<view class='titile_problem'>常见问题</view>
+</view>
+<!--titile  -->
+<!--content  -->
+<view class='content_container'>
+<image class='avatar' src='{{user_avatar}}'></image>
+<image class='user_photo' mode='aspectFill' src='{{choseimg}}' bindtap='chosePhoto'></image>
+<view class="word_space"></view>
+<view class='add_photo_word' wx:if="{{choseimg == ''}}">添加照片</view>
+</view>
+<!--content  -->
+<!--bottom  -->
+<view class='bottom_container'>
+<view class='bottom_titile_container'>
+<view class='bottom_titile'>标题</view>
+<input class='bottom_titile_content' confirm-type="next"  placeholder="准备好红包,我来卖萌啦!" value="{{title}}" bindinput="titleinput"></input>
+</view>
+<view class='line'></view>
+<view class='bottom_titile_container'>
+<view class='bottom_titile'>价格</view>
+<input class='bottom_titile_content' confirm-type="done" type="digit" placeholder="我要卖999个萌" value="{{price}}" bindinput="priceinput"></input>
+<view class='last_title'>元</view>
+</view>
+<view class='line'></view>
+<view class='bottom_titile_2' style='margin-top:10rpx;'>收到红包后将向您收取1%手续费</view>
+<button class='btn_send' type="warn" bindtap="orderbtn"> 开始卖萌 </button>
+</view>
+<!--bottom  -->
+</view>
