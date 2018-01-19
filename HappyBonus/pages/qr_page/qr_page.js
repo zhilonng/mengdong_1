@@ -121,9 +121,10 @@ Page({
           desc: that.data.text,
           path: '/pages/sell_adorable_page/sell_adorable_page?id='+that.data.order_id,
           success: function(res) {
+            console.log(res)
           // 转发成功
             wx.redirectTo({
-              url: '../sell_adorable_page/sell_adorable_page?order_id='+res.data.order_id,
+              url: '../sell_adorable_page/sell_adorable_page?id='+that.data.order_id,
             })
           },
           fail: function(res) {
@@ -139,7 +140,7 @@ Page({
           success: function(res) {
           // 转发成功
           wx.redirectTo({
-              url: '../newyear_lucky_page/newyear_lucky_page?order_id='+res.data.order_id,
+              url: '../newyear_lucky_page/newyear_lucky_page?id='+that.data.order_id,
             })
           },
           fail: function(res) {

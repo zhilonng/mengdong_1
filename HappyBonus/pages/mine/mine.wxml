@@ -26,6 +26,6 @@
 <view class='item_container'>
 <view class="item_titile">联系我们</view>
 <view class='space'></view>
-<button class='item_button item_button_orange'>客服</button>
+<button open-type="contact" class='item_button item_button_orange'>客服</button>
 <button class='item_button item_button_blue'>关注公众号</button>
 </view>
