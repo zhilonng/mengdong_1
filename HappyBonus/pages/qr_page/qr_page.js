@@ -19,6 +19,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.hideShareMenu()
     wx.showLoading({
       title: '二维码生成中',
     })
@@ -59,7 +60,7 @@ Page({
       }
     })
     wx.setNavigationBarTitle({
-      title: '分享页面'
+      title: ''
       })
   },
 
@@ -149,6 +150,11 @@ Page({
         }
       }
      
+  }, 
+  turnTopage: function (e) {
+    wx.navigateBack({
+      delta: 1
+    })
   },
   showqrcode:function (){
     var that=this;

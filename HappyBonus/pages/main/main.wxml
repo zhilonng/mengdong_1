@@ -3,29 +3,34 @@
 <view class='titile_container'>
 <view class='titile'>玩法</view>
 <view class='space'></view>
-<image class="avatar" src='{{user_avatar}}'/>
+<image class="avatar" src='{{userInfo.avatarUrl}}' />
 </view>
 
 <view class='item_container item_top container_white' bindtap='turnToSelAdorable'>
 <view class='item_content_container'>
 <view class='item_title_container titile_container_orange'>
-<view class='item_titile_circle circle_white'></view>
+<image class="maimeng_icon" src='/pages/image/maimeng_icon.png'/>
 <view class='item_titile titile_white'>卖萌</view>
 </view>
 <view class="item_content">准备好红包，我来卖萌啦！</view>
 </view>
+<view class='space'></view>
+<image class="maimeng_img" src='/pages/image/maimeng_img.png'/>
 </view>
 
 <view class='item_container container_red' bindtap="turnToBaiNianPage">
 <view class='item_content_container'>
 <view class='item_title_container titile_container_white'>
-<view class='item_titile_circle circle_red'></view>
+<image class="bainian_icon" src='/pages/image/bainian_icon.png'/>
 <view class='item_titile titile_red'>拜年</view>
 </view>
 <view class="item_content content_white">恭喜发财，红包拿来！</view>
 </view>
+<view class='space'></view>
+<image class="bainian_img" src='/pages/image/bainian_img.png'/>
 </view>
 
+<!--
 <view class='item_container container_white'>
 <view class='item_content_container'>
 <view class='item_title_container titile_container_purple'>
@@ -35,17 +40,33 @@
 <view class="item_content">不懂我，一毛钱都不给！</view>
 </view>
 </view>
+-->
 
-<view class='item_container container_white'>
+<view class='item_container item_top container_white' bindtap="alertBox">
 <view class='item_content_container'>
 <view class='item_title_container titile_container_blue'>
-<view class='item_titile_circle circle_white'></view>
-<view class='item_titile'>领养机器人</view>
+<image class="jiqiren_icon" src='/pages/image/jiqiren_icon.png'/>
+<view class='item_titile titile_white'>领养机器人</view>
 </view>
 <view class="item_content">朋友圈的智能好友</view>
 </view>
+<view class='space'></view>
+<image class="jiqiren_img" src='/pages/image/jiqiren_img.png'/>
 </view>
 
+<form bindsubmit="formSubmit" report-submit="true" wx:if="{{showAlert==true}}">
+  <view class="alertbox">
+	  <view class="section section_gap" style="color:#ffffff">
+	    <view style="margin-left:5%" class="section__title">暂未上线,上线时通知我</view>
+	  </view>
+	  <view class="btn-area">
+	    <button style="margin-top:5%" formType="submit">确定</button>
+	    <button style="margin-top:5%" bindtap="closeAlaertBox">关闭</button>
+	  </view>
+  </view>
+</form>
+
+<!--
 <view class='item_container container_white'>
 <view class='item_content_container'>
 <view class='item_title_container titile_container_red'>
@@ -55,3 +76,13 @@
 <view class="item_content">快来挑战，答对就有奖!</view>
 </view>
 </view>
+-->
+
+<!--
+<button class="item_container_footer" open-type="contact">
+<view class="container_footer">
+<image class="weixin_icon" src='/pages/image/weixin_icon.png'/>
+<view class="weixin_txt">点此关注 <text>我的妈呀</text>，更多玩法等着你</view>
+</view>
+</button>
+-->

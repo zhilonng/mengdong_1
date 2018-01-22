@@ -12,7 +12,9 @@ Page({
     picRandName: '',
     title:'',
     token : '',
-    picUrl:''
+    picUrl:'',
+    showAlert:false,
+    newOrder:'',
   },
 
   /**
@@ -20,6 +22,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    wx.hideShareMenu()
     var userInfo = app.globalData.userInfo;
     that.setData({
       userInfo: app.globalData.userInfo,
@@ -110,11 +113,9 @@ Page({
     var that=this;
     console.log(e.detail.value)
     var con=e.detail.value;
-    if(con!=''){
-      that.setData({
-        title:con
-      })
-    }
+    that.setData({
+      title:con
+    })
   },
   orderbtn: function () {
     var that=this;
@@ -164,9 +165,10 @@ Page({
           "Content-Type": "application/x-www-form-urlencoded"
         },
         success: function (res) {
-          wx.redirectTo({
-            url: '../qr_page/qr_page?order_id='+res.data.order_id,
-          })
+          that.setData({
+              newOrder:res.data.order_id,
+              showAlert:true,
+            })
         },
         fail:function (res){
           console.log('fale'+res.data)
@@ -174,7 +176,64 @@ Page({
       })
     }
     if(that.data.choseimg.length!=0){
-      upload();
+      if(that.data.title.length>15){
+        wx.showModal({
+          title: '拜年提醒',
+          content: '标题最多15个字',
+          showCancel:false
+        })
+      }else{
+        upload();
+      }
+    }else{
+      wx.showModal({
+        title: '拜年',
+        content: '请添加一张图片再开始拜年吧',
+        showCancel:false
+      })
     }
+  },
+    closeAlaertBox:function(){
+    var that=this;
+    that.setData({
+      showAlert:false
+    })
+    wx.redirectTo({
+      url: '../newyear_lucky_page/newyear_lucky_page?id='+that.data.newOrder,
+    })
+  },
+  formSubmit:function(e){
+    var that=this;
+    var formid=e.detail.formId
+    wx.request({
+      url: 'https://baby.mamid.cn/User/User/getBuyNotice', 
+      method: 'POST',
+      data: {
+        form_id:formid,
+        user_id:getApp().globalData.userInfo.user_id,
+        order_id:that.data.newOrder
+      },
+      header: { 
+        'content-type':'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log(res.data)
+        var notice=res.data.statusCode==200?'开启成功':'开启失败';
+        that.setData({
+          showAlert:false
+        })
+        wx.showToast({
+          title: notice,
+          icon: 'loading',
+          duration: 1000
+        })
+        wx.redirectTo({
+          url: '../newyear_lucky_page/newyear_lucky_page?id='+that.data.newOrder,
+        })
+      },
+      fail:function (res){
+        console.log('fale'+res.data)
+      }
+    })
   }
 })

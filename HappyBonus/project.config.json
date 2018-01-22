@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.1",
 	"appid": "wx6b075400ce000a59",
-	"projectname": "HappyBonus",
+	"projectname": "%E5%8D%96%E8%90%8C%E5%95%A6",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -28,15 +28,15 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "分享页面",
+					"name": "生成了二维码",
 					"pathName": "pages/qr_page/qr_page",
-					"query": "order_id=51"
+					"query": "order_id=80"
 				},
 				{
-					"id": 2,
+					"id": 1,
 					"name": "点击别人",
 					"pathName": "pages/sell_adorable_page/sell_adorable_page",
-					"query": ""
+					"query": "id=96&from=tmpmsg"
 				},
 				{
 					"id": 2,

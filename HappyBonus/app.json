@@ -1,16 +1,9 @@
 {
   "pages": [
     "pages/main/main",
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/mine/mine",
-    "pages/classify/classify",
-    "pages/index/Share/ShareHotMoney",
-    "pages/index/Share/share",
-    "pages/index/mRecord/myRecord",
     "pages/qr_page/qr_page",
     "pages/record/record",
-    "pages/order/order",
     "pages/withdraw/withdraw",
     "pages/bainian_page/bainian_page",
     "pages/sell_adorable_page/sell_adorable_page",
@@ -21,24 +14,24 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#EE5C42",
+    "navigationBarBackgroundColor": "#f24d4d",
     "navigationBarTitleText": "卖萌啦",
     "navigationBarTextStyle": "#fff",
     "enablePullDownRefresh": "true"
   },
   "tabBar": {
     "backgroundColor": "#fff",
-    "selectedColor": "#fe2f5b",
+    "selectedColor": "#f24d4d",
     "list": [
       {
-        "iconPath": "pages/image/money.png",
-        "selectedIconPath": "pages/image/money.png",
+        "iconPath": "pages/image/play.png",
+        "selectedIconPath": "pages/image/play_selected.png",
         "pagePath": "pages/main/main",
         "text": "玩法"
       },
       {
-        "iconPath": "pages/image/money.png",
-        "selectedIconPath": "pages/image/money.png",
+        "iconPath": "pages/image/mine.png",
+        "selectedIconPath": "pages/image/mine_selected.png",
         "pagePath": "pages/mine/mine",
         "text": "我的"
       }

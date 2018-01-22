@@ -1,12 +1,12 @@
 page {
-  background: ghostwhite;
+  background: #eeeeee;
   width: 100%;
   height: 100%;
 }
 userMoneypage{
 	height:100%;
 	width:100%;
-	background:#edeef0;
+	background:#f6f6f6;
 }
 .container{
 	display:flex;
@@ -24,7 +24,8 @@ userMoneypage{
  	align-items:center;
 }
 .mywithdrawtext{
-	font-size:40rpx;
+	font-size: 32rpx;
+  color: #666666;
 }
 .userMoney{
 	margin-top:5%;
@@ -36,11 +37,11 @@ userMoneypage{
 	flex-direction:column;
 	background:#ffffff;
 	width:100%;
-  margin-top: 40rpx;
+  margin-top: 10rpx;
 }
 .input_digits {
   width: 60%;
-  font-size: 37rpx;
+  font-size: 50rpx;
   margin: auto 0 auto 20rpx;
 }
 .space {
@@ -48,45 +49,50 @@ userMoneypage{
 }
 .inputbox{
 	display: flex;
+  border-bottom:1rpx solid #dddddd;
 }
 .allbtn{
-	margin: auto 20rpx auto 0;
-	color:#97c7e7;
-  font-size: 35rpx;
+	margin: auto 30rpx auto 0;
+	color:#33bbdd;
+  font-size: 30rpx;
 }
 .underbox{
-	margin:20rpx 0 20rpx 20rpx;
-	width:100%;
+	margin:30rpx 0 30rpx 30rpx;
+  font-size:30rpx;
+  color:#666666;
 }
 .buttom{
 	height:45%;
 }
-.line {
-  margin-top: 10rpx;
-  height: 1px;
-  background: ghostwhite;
-}
 .total_money_container {
   width: 100%;
+  line-height: 40rpx;
   display: flex;
 }
-.money {
-  margin-right: 20rpx;
-  color: #EE5C42;
-  font-size: 35rpx;
-  margin-top: 10rpx;
+.money_record {
+  margin: auto 30rpx auto 0;
+  color: #666666;
+  font-size: 30rpx;
 }
 .btn_withdraw {
-  margin-top: 70rpx;
+  margin-top: 100rpx;
   width: 86%;
   margin-left: 7%;
 }
 .withdraw_word {
   width: 50%;
   text-align: center;
-  margin-top:20rpx;
+  margin-top:30rpx;
 }
 .contact_container {
   display: flex;
-  margin-top: 200rpx;
+  margin-top: 160rpx;
+  border:1rpx solid #dddddd;
+  padding:10rpx 30rpx 10rpx 30rpx;
+}
+.qianbao_icon {
+  width: 40rpx;
+  height: 40rpx;
+  float: left;
+  margin-right: 10rpx;
 }

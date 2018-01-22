@@ -10,6 +10,7 @@ Page({
     receive_data:[],
     send_data:[],
     detail_data:[],
+    loadpage:1,
   },
   //事件处理函数
   ChangeTab: function (e) {
@@ -22,6 +23,7 @@ Page({
   },
   onLoad: function () {
     var that = this;
+    wx.hideShareMenu()
     wx.request({
       url: 'https://baby.mamid.cn/User/Order/getPersonOrder/uid/'+app.globalData.userInfo.user_id, //仅为示例，并非真实的接口地址
       method: 'GET',
@@ -38,7 +40,7 @@ Page({
       }
     })
     wx.setNavigationBarTitle({
-      title: '个人记录'
+      title: '记录'
       })
   },
   turnTopage:function (e) {
@@ -53,8 +55,62 @@ Page({
     wx.navigateTo({
       url: url 
     })
-
+  },
+  // 上拉加载
+lower:function(e){
+  console.log('lower')
+  var that=this
+  var oldpage=that.data.loadpage
+  var action = function(){
+    wx.request({
+      url: 'https://baby.mamid.cn/User/Order/lowerLoadpage/uid/'+app.globalData.userInfo.user_id+'/loadpage/'+that.data.loadpage+'/style/'+that.data.houBaoStyle,
+      method: 'GET',
+      success:function(res) {
+        console.log(res.data)
+        if(res.data.statusCode==200){
+          wx.showLoading({
+            title: '加载中',
+          })
+          that.setData({
+            loadpage:oldpage+1
+          })
+          if(that.data.houBaoStyle==1){
+            var receive_data=that.data.receive_data
+            for(var i=0;i<res.data.data.length;i++){
+              receive_data.push(res.data.data[i])
+            }
+            that.setData({
+              receive_data:receive_data
+            })
+          }else{
+            var send_data=that.data.send_data
+            console.log(send_data);
+            for(var i=0;i<res.data.data.length;i++){
+              send_data.push(res.data.data[i])
+            }
+            wx.hideLoading()
+            that.setData({
+              send_data:send_data
+            })
+          }
+        }else{
+          wx.hideLoading()
+          wx.showToast({
+            title: '无更多记录',
+            icon: 'loading',
+            duration: 1000
+          })
+          return false;
+        }
+      }
+    })
   }
+  if(that.data.houBaoStyle<3){
+    action();
+  }
+
+}
+
 
 
 })

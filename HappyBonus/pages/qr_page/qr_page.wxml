@@ -1,26 +1,21 @@
 <!--pages/qr_page/qr_page.wxml-->
-<view class="container">
+<view class="container" bindtap='turnTopage' data-index="{{order_id}}">
 	<view class='pic'>
-	    <image class="picture" mode="scaleToFill" src="{{picUrl}}"></image>
+    <image class="picture" mode="aspectFill" src="{{picUrl}}"></image>
 	</view>
-	<view class='actcute' wx:if="{{type == 1}}">
-	    {{nickname}}  卖了一个萌
-	</view>
-	<view class='actcute' wx:else>
-	    {{nickname}}  向你拜年啦
-	</view>
-
-	<view class="text">
-		{{text}}
-	</view>
-	<view class="snsQrcode">
-		<image mode="widthFix" style="width:250rpx;height:250rpx;border-radius:50%" bindtap="showqrcode" src="{{qrcodePic}}"></image>
-	</view>
-	<view class="sharebox">
-		<button class="share" type="primary" open-type="share">
-			<view class="share_txt">转发到好友或群聊</view>
-		</button>
-		<view class="shareTopic">
-		</view>
-	</view>
+  <view class="picc"><image class="xiangkuang" src="/pages/image/xiangkuang.png" mode="aspectFit"></image><view style="margin-top:-2%;width:100%;height:70%;background:#f51e3c;border-radius:0 0 20rpx 20rpx;"></view></view>
+<view class="snsQrcode">
+    <image mode="widthFix" style="position:fixed;z-index:1;top:calc(50% + 10rpx);left:calc(50% - 150rpx);width:300rpx;height:300rpx;border-radius:100%;" src="{{qrcodePic}}"></image>
+  </view>
+  <view class="text">
+    {{text}}
+  </view>
 </view>
+  <view class="sharebox">
+    <button class="share" type="primary" open-type="share">
+      <view class="share_txt">转发到好友或群聊</view>
+    </button>
+    <view class="shareTopic">
+    </view>
+  </view>
+

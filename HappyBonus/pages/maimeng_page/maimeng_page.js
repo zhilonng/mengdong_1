@@ -14,6 +14,8 @@ Page({
     token : '',
     picUrl:'',
     price:'',
+    showAlert:false,
+    newOrder:'',
   },
 
   /**
@@ -21,6 +23,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    wx.hideShareMenu()
     var userInfo = app.globalData.userInfo;
     that.setData({
       userInfo: app.globalData.userInfo,
@@ -111,11 +114,9 @@ Page({
     var that=this;
     console.log(e.detail.value)
     var con=e.detail.value;
-    if(con!=''){
       that.setData({
         title:con
       })
-    }
   },
   orderbtn: function () {
     var that=this;
@@ -149,7 +150,7 @@ Page({
     })
     }
     var createOrder=function () {
-      var title=that.data.title==''?'准备好红包,我来卖萌啦!':that.data.title;
+      var title=that.data.title==''?'准备好红包，我来卖萌啦!':that.data.title;
       wx.request({
         url: 'https://baby.mamid.cn/User/Order/createOrder', //仅为示例，并非真实的接口地址
         method: 'POST',
@@ -168,13 +169,14 @@ Page({
           console.log(res.data)
           if(res.data.statusCode==200){
             wx.hideLoading()
-            wx.redirectTo({
-              url: '../qr_page/qr_page?order_id='+res.data.order_id,
+            that.setData({
+              newOrder:res.data.order_id,
+              showAlert:true,
             })
           }else{
             wx.hideLoading()
             wx.showToast({
-              title: '卖萌失败',
+              title: '卖萌失败,请稍后再试',
               icon: 'fail',
               duration: 2000
             })
@@ -186,7 +188,13 @@ Page({
       })
     }
     if(that.data.choseimg.length!=0){
-      if(that.data.price=='' || that.data.price==0 || that.data.price>999){
+      if(that.data.title.length>15){
+        wx.showModal({
+          title: '卖萌提醒',
+          content: '标题最多15个字',
+          showCancel:false
+        })
+      }else if(that.data.price=='' || that.data.price==0 || that.data.price>999){
         wx.showModal({
           title: '卖萌提醒',
           content: '价格需要大于0元且小于999',
@@ -224,4 +232,47 @@ Page({
       price:money,
     })
   },
+  closeAlaertBox:function(){
+    var that=this;
+    that.setData({
+      showAlert:false
+    })
+    wx.redirectTo({
+      url: '../sell_adorable_page/sell_adorable_page?id='+that.data.newOrder,
+    })
+  },
+  formSubmit:function(e){
+    var that=this;
+    var formid=e.detail.formId
+    wx.request({
+      url: 'https://baby.mamid.cn/User/User/getBuyNotice', 
+      method: 'POST',
+      data: {
+        form_id:formid,
+        user_id:getApp().globalData.userInfo.user_id,
+        order_id:that.data.newOrder
+      },
+      header: { 
+        'content-type':'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log(res.data)
+        var notice=res.data.statusCode==200?'开启成功':'开启失败';
+        that.setData({
+          showAlert:false
+        })
+        wx.showToast({
+          title: notice,
+          icon: 'loading',
+          duration: 1000
+        })
+        wx.redirectTo({
+          url: '../sell_adorable_page/sell_adorable_page?id='+that.data.newOrder,
+        })
+      },
+      fail:function (res){
+        console.log('fale'+res.data)
+      }
+    })
+  }
 })

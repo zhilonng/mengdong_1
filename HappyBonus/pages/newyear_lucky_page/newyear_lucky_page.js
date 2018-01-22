@@ -15,6 +15,8 @@ Page({
     record:[],
     showBuybox:0,
     clickDialog:0,
+    showAlert:false,
+    showNotice:false,
   },
 
   /**
@@ -23,6 +25,12 @@ Page({
   onLoad: function (options) {
     console.log(options)
     var that=this;
+    if(options.from=='tmpmsg'){
+      console.log('From tmpmsg')
+      that.setData({
+        showNotice:true,
+      })
+    }
     if(options.scene){
       that.setData({
         order_id:options.scene
@@ -112,6 +120,8 @@ Page({
     that.setData({
       showBuybox:1,
       clickDialog:0,
+      showAlert:true
+
     })
   },
   payBtn:function () {
@@ -217,10 +227,24 @@ Page({
     })
   }
   },
+  closeBox:function() {
+    var that = this;
+    if(that.data.clickDialog==0){
+       that.setData({
+        showBuybox:0,
+        showAlert:false
+      })
+     }else{
+      that.setData({
+        clickDialog:0
+      })
+     }
+   
+  },
   clickDialog:function() {
     var that = this;
     that.setData({
-      clickDialog:1,
+     clickDialog:1
     })
   },
   turnToRecord:function() {
@@ -232,7 +256,13 @@ Page({
     wx.navigateTo({
       url: '../bainian_page/bainian_page',
     })
-  },
+  }, 
+  turnToFriend: function () {
+    var that = this
+    wx.navigateTo({
+      url: '../qr_page/qr_page?order_id=' + that.data.order_id,
+    })
+  }, 
   inpuCheck: function (e){
     var that=this;
     var money=e.detail.value;
@@ -251,4 +281,41 @@ Page({
       price:money,
     })
   },
+  closeAlaertBox:function(){
+    var that=this;
+    that.setData({
+      showNotice:false
+    })
+  },
+  formSubmit:function(e){
+    var that=this;
+    var formid=e.detail.formId
+    wx.request({
+      url: 'https://baby.mamid.cn/User/User/getBuyNotice', 
+      method: 'POST',
+      data: {
+        form_id:formid,
+        user_id:getApp().globalData.userInfo.user_id,
+        order_id:that.data.order_id
+      },
+      header: { 
+        'content-type':'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log(res.data)
+        var notice=res.data.statusCode==200?'开启成功':'开启失败';
+        that.setData({
+          showNotice:false
+        })
+        wx.showToast({
+          title: notice,
+          icon: 'loading',
+          duration: 1000
+        })
+      },
+      fail:function (res){
+        console.log('fale'+res.data)
+      }
+    })
+  }
 })

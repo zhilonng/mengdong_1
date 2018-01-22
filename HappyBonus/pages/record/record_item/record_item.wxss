@@ -1,7 +1,9 @@
+
 .item_container {
   width: 100%;
   height: 140rpx;
-  border-bottom: 2px solid #f3f5fa;
+  background:#ffffff;
+  border-bottom: 1px solid #eeeeee;
   display: flex;
 }
 
@@ -28,18 +30,19 @@
 .item_time {
   font-size: 25rpx;
   color: #999;
+  margin-top:15rpx;
 }
 .details_tag_orange {
-  background: #EEB422;
-  color: white;
-  border-radius: 25rpx;
+  background: #ff9900;
+  color: #ffffff;
+  border-radius: 30rpx;
   padding: 5rpx 20rpx;
-  font-size: 32rpx;
+  font-size: 28rpx;
 }
 .details_tag_red{
-  background: #E64447;
-  color: white;
-  border-radius: 25rpx;
+  background: #f24d4d;
+  color: #ffffff;
+  border-radius: 30rpx;
   padding: 5rpx 20rpx;
-  font-size: 32rpx;
+  font-size: 28rpx;
 }

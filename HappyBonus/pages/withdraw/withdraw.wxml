@@ -2,6 +2,7 @@
 <view class="container">
 	<view class="top">
 		<view class="mywithdrawtext">
+      <image class="qianbao_icon" src='/pages/image/qianbao_icon.png'/>
 			我的余额
 		</view>
 		<view class="userMoney">
@@ -11,18 +12,17 @@
 
 	<view class="medium">
 		<view class="inputbox">
-        <view class='inputbox_symbol' style='font-size:50rpx; margin:20rpx;'>￥</view>
-			 <input class='input_digits' bindinput="inpuCheck" type="digit" confirm-type="done" placeholder="输入要提现的金额" value="{{allMoney}}"  />
+        <view class='inputbox_symbol' style='font-size:50rpx; margin:20rpx 0 22rpx 20rpx;'>￥</view>
+			 <input class='input_digits' bindinput="inpuCheck" type="digit" confirm-type="done" placeholder="" value="{{allMoney}}"  />
 			 <view class='space'></view>
        <view class="allbtn" bindtap="allbtn">全部提现</view>  
 		</view>
-    <view class='line'></view>
-    <view class='total_money_container'>
+    <view class='total_money_container' bindtap="turnToMoneyrecord">
 		<view class="underbox">
-			已提现金额
+			累计提现 {{has_withdraw}} 元
 		</view>
     <view class='space'></view>
-    <view class='money'>{{has_withdraw}}</view>
+    <view class='money_record'>查看明细</view>
     </view>
 	</view>
 
@@ -32,7 +32,5 @@
 
   <view class='contact_container'>
   <view bindtap='turnToCommonProblem'>常见问题</view>
-  <view style='margin-left:10rpx'>|</view>
-  <view style='margin-left:10rpx'>联系客服</view>
   </view>
 </view>

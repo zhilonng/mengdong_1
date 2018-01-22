@@ -14,6 +14,8 @@ Page({
   record:[],
   showBuybox:0,
   clickDialog:0,
+  showAlert:false,
+  showNotice:false,
   },
 
   /**
@@ -22,6 +24,12 @@ Page({
   onLoad: function (options) {
     console.log(options)
     var that=this;
+    if(options.from=='tmpmsg'){
+      console.log('From tmpmsg')
+      that.setData({
+        showNotice:true,
+      })
+    }
     that.setData({
       order_id:options.id
     })
@@ -87,7 +95,8 @@ Page({
   buyBtn: function (){
     var that=this;
     that.setData({
-      showBuybox:1
+      showBuybox:1,
+      showAlert:true
     })
   },
   payBtn:function () {
@@ -184,10 +193,11 @@ Page({
       })
     }
   },
-  clickDialog:function() {
+  closeBox:function() {
     var that = this;
     that.setData({
-      clickDialog:1,
+      showBuybox:0,
+      showAlert:false
     })
   },
   turnToRecord:function() {
@@ -195,9 +205,52 @@ Page({
       url: '../record/record',
     })
   },
-  turnToBaiNian:function() {
+  turnToMaimeng:function() {
     wx.navigateTo({
-      url: '../bainian_page/bainian_page',
+      url: '../sell_adorable_page/sell_adorable_page',
+    })
+  }, turnToFriend: function () {
+    var that=this
+    wx.navigateTo({
+      url: '../qr_page/qr_page?order_id='+that.data.order_id,
+    })
+  }, 
+    closeAlaertBox:function(){
+    var that=this;
+    console.log('close')
+    that.setData({
+      showNotice:false
     })
   },
+  formSubmit:function(e){
+    var that=this;
+    var formid=e.detail.formId
+    wx.request({
+      url: 'https://baby.mamid.cn/User/User/getBuyNotice', 
+      method: 'POST',
+      data: {
+        form_id:formid,
+        user_id:getApp().globalData.userInfo.user_id,
+        order_id:that.data.order_id
+      },
+      header: { 
+        'content-type':'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log(res.data)
+        var notice=res.data.statusCode==200?'开启成功':'开启失败';
+        that.setData({
+          showNotice:false
+        })
+        wx.showToast({
+          title: notice,
+          icon: 'loading',
+          duration: 1000
+        })
+      },
+      fail:function (res){
+        console.log('fale'+res.data)
+      }
+    })
+  }
 })

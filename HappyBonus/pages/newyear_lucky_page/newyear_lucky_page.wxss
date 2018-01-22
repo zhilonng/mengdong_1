@@ -1,78 +1,98 @@
 /* pages/newyear_lucky_page/newyear_lucky_page.wxss */
 page {
-  background: #EEB422;
+  background: #ffffff;
   height: 100%;
   width: 100%;
 }
-.background_arc {
-  position: relative;
-  width: 100%;
-  height: 60rpx;
-  text-align: center;
-  color: #fff;
-  background-color: #EE5C42;
-  z-index: -1;
+.titile_container {
+  position: fixed;
+  top:0;
+  width:100%;
+  height:100rpx;
+  z-index: 0;
 }
-.background_arc:after {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -100px;
-  z-index: -1;
-  content: ' ';
-  height: 110px;
-  width: 100%;
-  border-radius: 0 0 50% 50%;
-  background-color: #EE5C42;
+.item_titile_container {
+  margin:0 auto 0 auto;
+  width:100rpx;
+  height:100rpx;
+  background: #f24d4d;
+  border-radius: 0 0 50rpx 50rpx;
+  z-index: 0;
 }
-
+.user_avatar {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 80rpx;
+  background: #eeeeee;
+  margin: 10rpx;
+}
 .card1_container {
-  width: 96%;
-  margin-left: 2%;
+  position: fixed;
+  top:0;
+  width: 100%;
   height: 60%;
-  border-radius: 35rpx;
+  z-index:-1;
 }
 .card1_photo {
-  position: absolute;
-  height: 60%;
-  width: 96%;
-  border-radius: 35rpx;
-  background: gray;
+  height: 100%;
+  width: 100%;
+  background: #dddddd;
   z-index: -1;
 }
-.titile_container {
+.card2_container {
   width: 100%;
-  height: 10%;
-  padding-top: 20rpx;
-  padding-left: 20rpx;
+  min-height:100%;
+  border-radius: 30rpx 30rpx 0 0 ;
+  border-top:1rpx solid #bbbbbb;
+  background:#ffffff;
+  margin-top: 92%;
+  opacity:0.999;
   z-index: 1;
 }
-.item_title_container{
-  height: 60rpx;
-  width: 140rpx;
-  display: flex;
-  background: #EE5C42;
-  border-radius: 30rpx;
-  z-index: 1;
-  padding:0rpx;
+.triangle{
+  width: 0px;
+  height: 0px;
+  border-width: 15rpx;
+  border-style: solid ;
+  border-color: transparent #f24d4d transparent transparent;
+  position: relative;
+  left:102rpx;
+  top:30rpx;
 }
-.item_titile_circle {
-  height: 40rpx;
-  width: 40rpx;
-  border-radius: 40rpx;
-  margin: auto 0 auto 10rpx;
-  background: white;
+.card2_user_container {
+  margin:0 auto 0 auto;
+  width: 100%;
+  height:80rpx;
+  padding:30rpx 0 30rpx 0;
+  float:left;
+  border-bottom:1rpx solid #e6e6e6;
 }
-.item_titile {
-  font-size: 35rpx;
-  color: white;
-  margin: auto 10rpx auto 10rpx;
+.card2_user_avatar {
+  height:80rpx;
+  width:80rpx;
+  border-radius:80rpx;
+  border:1rpx solid #dddddd;
+  float:left;
+  margin:auto 20rpx;
+}
+.card2_user_content {
+  float:left;
+  margin: -25rpx 0 auto 8rpx;
+  color: #ffffff;
+  font-size: 36rpx;
+  background:#f24d4d;
+  border-radius:14rpx;
+  line-height:80rpx;
+  position: relative;
+  padding:0 20rpx;
+  font-weight:800;
 }
 .card_iner_card1 {
+  position:absolute;
+  top:30%;
+  left:7%;
   width: 86%;
   height: 40%;
-  margin-left: 7%;
-  margin-top: 20%;
   z-index: 1;
 }
 .card_iner_card1_2 {
@@ -87,52 +107,35 @@ page {
 .money_container {
   display: flex;
   margin-top: 40rpx;
+  text-align:center;
 }
 .input_digits {
-  margin-left: 20rpx;
-  width: 250rpx;
-  font-size:55rpx;
+  font-weight:blod;
+  font-size:50rpx;
 }
 .btn_send {
   width: 86%; 
   border-radius: 25rpx;
   margin-top: 20rpx;
 }
-.card1_bottom_container {
-  width: 100%;
-  height: 15%;
-  background: #EE5C42;
-  z-index: 1;
-  margin-top: 20%;
-  border-radius: 0 0 35rpx 35rpx;
+.user_option_container {
   display: flex;
-}
-.user_avatar {
-  height: 80rpx;
-  width: 80rpx;
-  border-radius: 80rpx;
-  background: gray;
-  margin: auto 0 auto 20rpx;
-}
-.card1_bottom_content {
-  margin: auto 0 auto 20rpx;
-  color: white;
-  font-size: 38rpx;
+  width: 86%;
+  font-size: 30rpx;
+  margin-top: 20rpx;
 }
 
-.card2_container {
-  width: 96%;
-  margin-left: 2%;
-  border-radius: 35rpx;
-  background: white;
-  margin-top: 100rpx;
-  padding-bottom: 30rpx;
-}
+
+
 .card2_titile_container {
+ opacity:1;
   width: 94%;
-  margin-left: 3%;
+  padding: 10rpx 3% 10rpx 3%;
   display: flex;
-  padding-top: 20rpx;
+  background:#eeeeee;
+  border-bottom:1rpx solid #e6e6e6;
+  line-height:80rpx;
+
 }
 .record_tag {
   margin: auto 0 auto 0;
@@ -145,74 +148,103 @@ page {
   width: 94%;
   margin-left: 3%;
   display: flex;
-  background: gainsboro;
-  margin-top: 20rpx;
-  border-radius: 20rpx;
+  background: #f9f9f9;
+  margin-top: 30rpx;
+  border-radius: 100rpx;
 }
 .record_content_container {
-  margin: auto 0 auto 20rpx;
+  margin: auto 0 auto 30rpx;
 }
 .record_content {
-  color: grey;
-  font-size: 25rpx;
+  color: #666666;
+  font-size: 30rpx;
 }
 .record_time {
-  color: gray;
-  font-size: 25rpx;
+  color: #bbbbbb;
+  font-size: 24rpx;
 }
 .account {
-  font-size: 40rpx;
-  color: #EE5C42;
-  margin: auto 20rpx auto 0;
+  font-size: 36rpx;
+  color: #f24d4d;
+  margin: auto 30rpx auto 0;
+  font-weight:800;
+}
+.item_title_container {
+  line-height:60rpx;
+  height:60rpx;
+  background:#ff9900;
+  margin:auto;
+}
+.share_icon{
+  width:36rpx;
+  height:36rpx;
+  float:left;
+  margin:13rpx 10rpx auto 0;
+}
+.item_titile{
+  color:#ffffff;
+  float:left;
+  font-size:28rpx;
 }
 .bottom_container {
   display: flex;
   position: fixed;
   bottom: 0;
-  height: 7%;
+  height: 100rpx;
   width: 100%;
-  background: red;
-  border-top: 2rpx solid gray;
+  background: #ffffff;
+  border-top:1rpx solid #f24d4d;
 }
 .more_game {
   text-align: center;
   height: 100%;
-  width: 35%;
+  width: 30%;
+  color:#666666;
+  line-height:100rpx;
+}
+
+.more_money {
+  width: 25%;
+  text-align: center;
+  height: 100%;
   background: white;
-  padding-top: 20rpx;
+  line-height:100rpx;
+  color: #f24d4d;
+  border-left:1rpx solid #f24d4d;
 }
 .give_money {
   height: 100%;
-  width: 65%;
+  width: 45%;
   border-radius: 0;
+  line-height:100rpx;
+  font-weight:800;
 }
-
+.more_game_txt {
+  margin-left:15rpx;
+  line-height:100rpx;
+}
 .empty {
   width: 100%;
-  height: 20%;
+  height: 140rpx;
 }
-.card_iner_card1_2 {
-  border-radius: 35rpx;
-  display: flex;
-  flex-direction:column;
-  align-items:center;
-  background: white;
-  padding-bottom: 20rpx;
-  z-index:2;
-  margin-top:18%
+.shadowBox{
+  position:absolute;
+  width:100%;
+  background-color:rgba(0,0,0,0.7);
+  height:100%;
+  left:0%;
+  top:0%;
 }
-.money_container {
-  display: flex;
-  margin-top: 40rpx;
+.alertbox{
+  width:55%;
+  margin-top:42%;
+  margin-left:24%;
 }
-.btn_send {
-  width: 86%; 
-  border-radius: 25rpx;
-  margin-top: 20rpx;
-}
-.user_option_container {
-  display: flex;
-  width: 86%;
-  font-size: 30rpx;
-  margin-top: 20rpx;
+form{
+  position:absolute;
+  width:100%;
+  background-color:rgba(0,0,0,0.7);
+  height:100%;
+  left:0%;
+  top:0%;
 }

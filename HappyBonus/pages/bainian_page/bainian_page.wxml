@@ -1,36 +1,39 @@
-<view class='background_arc'></view>
-
-<view class='container'>
-<!--titile  -->
-<view class='titile_container'>
-<!--tag  -->
-<view class='item_title_container'>
-<view class='item_titile_circle'></view>
-<view class='item_titile'>拜年</view>
-</view>
-<!--tag  -->
-
-<view class='space'></view>
-<view class='titile_problem'>常见问题</view>
-</view>
-<!--titile  -->
-<!--content  -->
-<view class='content_container'>
-<image class='avatar' src='{{user_avatar}}'></image>
-<image class='user_photo' mode='aspectFill' src='{{choseimg}}' bindtap='chosePhoto'></image>
-<view class="word_space"></view>
-<view class='add_photo_word' wx:if="{{choseimg == ''}}">添加照片</view>
-</view>
+  <view style="height:100%;width:100%;position:fixed;z-index:-1;background:#f24d4d;"></view>
+  <view class='content_container'>
+    <view class='titile_container'>
+      <image class="biaoti_icon" src='/pages/image/biaoti_icon.png'/>
+      <input class='titile_content' confirm-type="next" placeholder-style="color:#cccccc;font-weight:400;"  placeholder="恭喜发财，红包拿来!" value="{{title}}" bindinput="titleinput"></input>
+    </view>
+    <view class='line'></view>
+    <view class='price_container'>
+      <image class="yue_icon" src='/pages/image/yue_icon.png'/>
+      <view class='price_content'>看看亲友会给你多少红包，保持期待~</view>
+    </view>
+    <view class='line'></view>
+    <view class='photo_container'>
+      <image class='user_photo' mode='aspectFill' src='{{choseimg}}' bindtap='chosePhoto'></image>
+      <image class="photo_icon" src="/pages/image/photo_icon.png" wx:if="{{choseimg == ''}}" bindtap='chosePhoto'></image>
+    </view>
 <!--content  -->
 <!--bottom  -->
-<view class='bottom_container'>
-<view class='bottom_titile_container'>
-<view class='bottom_titile'>标题</view>
-<input class='bottom_titile_content' placeholder="恭喜发财，红包拿来" value="{{title}}" bindinput="titleinput"></input>
-</view>
-<view class='line'></view>
-<view class='bottom_titile_2' style='margin-top:10rpx;'>收到红包后将向您收取1%手续费</view>
-<button class='btn_send' type="warn" bindtap="orderbtn"> 发起拜年 </button>
-</view>
+    <view class='btn_titile'>
+      收到红包后将向您收取1%手续费
+    </view>
+    <button class='btn_send' type="warn" bindtap="orderbtn">开始拜年</button>
 <!--bottom  -->
-</view>
+  </view>
+  <view class="more_container">
+    <view class="more_container_title"><text style="color:#ffbb00;">————</text> 常见问题 <text style="color:#ffbb00;">————</text></view>
+    <view class="more_container_title_space"></view>
+  </view>
+    <form bindsubmit="formSubmit" report-submit="true" wx:if="{{showAlert==true}}">
+  <view class="alertbox">
+    <view class="section section_gap" style="color:#ffffff">
+      <view style="margin-left:5%" class="section__title">有人发红包时请通知我</view>
+    </view>
+    <view class="btn-area">
+      <button style="margin-top:5%" formType="submit">好的</button>
+      <button style="margin-top:5%" catch="closeAlaertBox">不用了</button>
+    </view>
+  </view>
+</form>

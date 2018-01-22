@@ -18,6 +18,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    wx.hideShareMenu()
     var userInfo = app.globalData.userInfo;
     that.setData({
       userInfo: app.globalData.userInfo,
@@ -155,8 +156,8 @@ Page({
         console.log(res.data)
         if(res.data.statusCode==200){
           wx.showModal({
-            title: '提示',
-            content: '提现成功,预计1-3个工作日内到账',
+            title: '提现成功',
+            content: '预计1-3个工作日内到账',
             showCancel:false,
             success: function(res) {
               var last_money=(that.data.userMoney*100)-(that.data.withdrawMoney*100);
@@ -179,8 +180,8 @@ Page({
       })
     }else{
       wx.showModal({
-        title: '提现提示',
-        content: '提现金额需大于1元',
+        title: '请注意',
+        content: '余额不足或提现不足1元',
         showCancel:false
       })
     }
@@ -188,6 +189,11 @@ Page({
   turnToCommonProblem:function() {
     wx.navigateTo({
       url: '../common_problem_page/common_problem_page',
+    })
+  },
+  turnToMoneyrecord: function () {
+    wx.navigateTo({
+      url: '../money_record_page/money_record_page',
     })
   }
 })

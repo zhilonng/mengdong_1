@@ -17,12 +17,13 @@ Page({
   onLoad: function (options) {
    var that = this;
    var userInfo = app.globalData.userInfo;
+   wx.hideShareMenu()
    that.setData({
      userInfo: app.globalData.userInfo,
      user_avatar: app.globalData.userInfo.avatarUrl,
    })
    wx.setNavigationBarTitle({
-      title: '个人主页'
+      title: ''
       })
   },
 

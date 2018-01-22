@@ -5,7 +5,6 @@
   width:100%;
   font-family:"PingFang SC Medium","微软雅黑";
   font-size:12px;
-  color:#3e3e3e;
 } 
 .con{
   overflow: hidden;

@@ -1,25 +1,26 @@
 <!--record.wxml-->
 <view class="container">
+<scroll-view scroll-y style="height:1333rpx"  bindscrolltolower="lower" >
  <view class='com'>
 <!--nav  -->
   <view class='nav'>
     <view class="nav_box" >
       <view class="nav_titile" bindtap='ChangeTab' data-id="1"
-            style="{{houBaoStyle==1?' color:#EE5C42; border-bottom:2px solid #EE5C42':''}}">
+            style="{{houBaoStyle==1?' color:#f24d4d;font-weight:800;background:#ffffff;':''}}">
         我发起的
       </view>
        <view class="nav_titile" bindtap='ChangeTab' data-id="2"
-            style="{{houBaoStyle==2?' color:#EE5C42; border-bottom:2px solid #EE5C42':''}}">
+            style="{{houBaoStyle==2?' color:#f24d4d;font-weight:800;background:#ffffff;':''}}">
         我参与的
       </view>
       <view class="nav_titile" bindtap='ChangeTab' data-id="3"
-            style="{{houBaoStyle==3?' color:#EE5C42; border-bottom:2px solid #EE5C42':''}}">
+            style="{{houBaoStyle==3?' color:#f24d4d;font-weight:800;background:#ffffff;':''}}">
         收支明细
       </view>
     </view>
   </view>
 <!--nav  -->
-
+<view style="height:90rpx;width:100%;"></view>
 <include wx:if="{{houBaoStyle == 1}}" wx:for="{{receive_data}}" src='./record_item/record_item.wxml'/>
 
 <include wx:if="{{houBaoStyle == 2}}" wx:for="{{send_data}}" src='./record_item/record_item.wxml'/>
@@ -27,4 +28,5 @@
 <include wx:if="{{houBaoStyle == 3}}" wx:for="{{detail_data}}" src='./record_item/details_item.wxml'/>
 <view wx:if="{{houBaoStyle == 3}}" class='item_container'> </view>
  </view>
+  </scroll-view>
 </view>
