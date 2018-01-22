@@ -33,7 +33,7 @@
     </view>
     <view class="btn-area">
       <button style="margin-top:5%" formType="submit">好的</button>
-      <button style="margin-top:5%" catch="closeAlaertBox">不用了</button>
+      <button style="margin-top:5%" bintap="closeAlaertBox">不用了</button>
     </view>
   </view>
 </form>
