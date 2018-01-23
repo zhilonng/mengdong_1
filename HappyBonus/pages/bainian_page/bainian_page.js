@@ -149,7 +149,7 @@ Page({
     })
     }
     var createOrder=function () {
-      var title=that.data.title==''?'恭喜发财，红包拿来':that.data.title;
+      var title=that.data.title==''?'恭喜发财，红包拿来！':that.data.title;
       wx.request({
         url: 'https://baby.mamid.cn/User/Order/createOrder', //仅为示例，并非真实的接口地址
         method: 'POST',

@@ -89,7 +89,7 @@ page {
 }
 .card_iner_card1 {
   position:absolute;
-  top:30%;
+  top:35%;
   left:7%;
   width: 86%;
   height: 40%;
@@ -114,7 +114,6 @@ page {
 }
 .btn_send {
   width: 86%; 
-  border-radius: 25rpx;
   margin-top: 20rpx;
 }
 .user_option_container {
@@ -122,6 +121,7 @@ page {
   width: 86%;
   font-size: 30rpx;
   margin-top: 20rpx;
+  text-align:center;
 }
 
 
@@ -226,24 +226,59 @@ page {
   width: 100%;
   height: 140rpx;
 }
+.more_container_title {
+  margin:40rpx 0 40rpx 0;
+  font-size:32rpx;
+  color:#666666;
+  width:100%;
+  text-align:center;
+  border-top:1rpx solid #eeeeee;
+  padding-top:30rpx;
+}
+
+.more_container_li {
+  width:88%;
+  margin:2% auto 4% auto;
+  background:#ffffff;
+  border-radius:20rpx;
+  padding:2% 3%;
+  border:1rpx solid #eeeeee;
+  background: #f9f9f9;
+}
+.more_container_li_title {
+  font-weight:800;
+  font-size:32rpx;
+  line-height:40rpx;
+  height:50rpx;
+  border-bottom:1rpx solid #eeeeee;
+  color:#666666;
+}
+.more_container_li_content {
+  font-size:28rpx;
+  color:#666666;
+  margin-top:2%;
+  font-weight:400;
+}
 .shadowBox{
-  position:absolute;
+  position:fixed;
   width:100%;
   background-color:rgba(0,0,0,0.7);
   height:100%;
   left:0%;
   top:0%;
+  z-index:9;
 }
 .alertbox{
-  width:55%;
-  margin-top:42%;
-  margin-left:24%;
+  width:60%;
+  margin:60% auto 0 auto;
 }
 form{
-  position:absolute;
+  position:fixed;
   width:100%;
   background-color:rgba(0,0,0,0.7);
   height:100%;
   left:0%;
   top:0%;
+  z-index:9;
+  text-align:center;
 }

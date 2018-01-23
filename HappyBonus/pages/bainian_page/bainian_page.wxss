@@ -60,13 +60,13 @@ page {
 }
 .photo_container{
   width: 705rpx;
-  background: #eeeeee;
+  background: #ffffff;
   height:705rpx;
 }
 .user_photo {
   width: 705rpx;
   height: 705rpx;
-  background: #eeeeee;
+  background: #ffffff;
 }
 .photo_icon{
   height:100rpx;
@@ -74,6 +74,13 @@ page {
   position:absolute;
   left:310rpx;
   margin-top:310rpx;
+}
+.bainian_bg {
+  position: absolute;
+  height: 705rpx;
+  width: 704rpx;
+  z-index:2;
+  left:1rpx;
 }
 .line {
   width: 100%;
@@ -85,7 +92,6 @@ page {
   text-align:center;
   height:80rpx;
   color:#999999;
-  border-top: 1rpx solid #dddddd;
   line-height: 80rpx;
   font-size:24rpx;
   }
@@ -97,7 +103,7 @@ page {
   width: 100%;
   min-height: 100%;
   border-radius: 30rpx 30rpx 0 0;
-  background: #eeeeee;
+  background: #ffffff;
   margin-top:154%;
   position:absolute;
   z-index: 1;
@@ -113,21 +119,45 @@ page {
   line-height:80rpx;
 }
 .more_container_title_space {
-  background:#eeeeee;
+  background:#ffffff;
   margin-top:-20rpx;
   border-radius:10rpx 10rpx 0 0;
   height:25rpx;
 }
+.more_container_li {
+  width:88%;
+  margin:2% auto 4% auto;
+  background:#ffffff;
+  border-radius:20rpx;
+  padding:2% 3%;
+  border:1rpx solid #eeeeee;
+  background: #f9f9f9;
+}
+.more_container_li_title {
+  font-weight:800;
+  font-size:32rpx;
+  line-height:40rpx;
+  height:50rpx;
+  border-bottom:1rpx solid #eeeeee;
+  color:#666666;
+}
+.more_container_li_content {
+  font-size:28rpx;
+  color:#666666;
+  margin-top:2%;
+  font-weight:400;
+}
 form{
-  position:absolute;
+  position:fixed;
   width:100%;
   background-color:rgba(0,0,0,0.7);
   height:100%;
   left:0%;
   top:0%;
+  z-index:9;
+  text-align:center;
 }
 .alertbox{
-  width:55%;
-  margin-top:42%;
-  margin-left:24%;
+  width:60%;
+  margin:60% auto 0 auto;
 }

@@ -10,19 +10,19 @@
 
 </view>
 
-<view class='item_container' >
+<view class='item_container' bindtap="withdrawBtn">
 <image class="yue_icon" src='/pages/image/yue_icon.png'/>
 <view class="item_titile">我的余额</view>
 <view class='space'></view>
 <view class="yue">￥{{userMoney}}</view>
-<button class='item_button' type='warn' bindtap="withdrawBtn">提现</button>
+<button class='item_button' type='warn'>提现</button>
 </view>
 
-<view class='item_container'>
+<view class='item_container' bindtap='turnToRecord'>
 <image class="jilu_icon" src='/pages/image/jilu_icon.png'/>
 <view class="item_titile">我的纪录</view>
 <view class='space'></view>
-<button class='item_button item_button_orange' bindtap='turnToRecord'>查看</button>
+<button class='item_button item_button_orange'>查看</button>
 </view>
 
 <view class='item_container'>

@@ -185,15 +185,16 @@ page {
   margin:auto 10rpx auto 20rpx;
 }
 form{
-  position:absolute;
+  position:fixed;
   width:100%;
   background-color:rgba(0,0,0,0.7);
   height:100%;
   left:0%;
   top:0%;
+  z-index:9;
+  text-align:center;
 }
 .alertbox{
-  width:55%;
-  margin-top:42%;
-  margin-left:24%;
+  width:60%;
+  margin:60% auto 0 auto;
 }

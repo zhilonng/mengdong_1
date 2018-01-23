@@ -1,7 +1,7 @@
 <view class='item_container'>
 <view class='item_details' style='margin: auto 0 auto 25rpx;'>
 <view class='details_titile_container'>
-<view class='item_money item_details_titile'><text wx:if="{{item.order_type == 1}}">卖萌：{{item.text}}</text><text wx:elif="{{item.order_type == 2}}">拜年：{{item.text}}</text></view>
+<view class='item_money item_details_titile'><text wx:if="{{item.order_type == 1}}">卖萌:{{item.text}}</text><text wx:elif="{{item.order_type == 2}}">拜年:{{item.text}}</text></view>
 </view>
 <view class='item_time item_titile_2'>{{item.create_time}}</view>
 </view>

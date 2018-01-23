@@ -33,6 +33,12 @@ page {
   height: 60%;
   z-index:-1;
 }
+.bainian_bg {
+  position:absolute;
+  height: 100%;
+  width: 100%;
+  z-index:0;
+}
 .card1_photo {
   height: 100%;
   width: 100%;
@@ -104,18 +110,14 @@ page {
   padding-bottom: 20rpx;
   z-index:2;
 }
-.money_container {
-  display: flex;
-  margin-top: 40rpx;
-  text-align:center;
-}
 .input_digits {
   font-weight:blod;
   font-size:50rpx;
+  text-align:left;
+  margin:16rpx 0 0 20rpx;
 }
 .btn_send {
   width: 86%; 
-  border-radius: 25rpx;
   margin-top: 20rpx;
 }
 .user_option_container {
@@ -227,13 +229,51 @@ page {
   width: 100%;
   height: 140rpx;
 }
+.more_container_title {
+  margin:40rpx 0 40rpx 0;
+  font-size:32rpx;
+  color:#666666;
+  width:100%;
+  text-align:center;
+  border-top:1rpx solid #eeeeee;
+  padding-top:30rpx;
+}
+
+.more_container_li {
+  width:88%;
+  margin:2% auto 4% auto;
+  background:#ffffff;
+  border-radius:20rpx;
+  padding:2% 3%;
+  border:1rpx solid #eeeeee;
+  background: #f9f9f9;
+}
+.more_container_li_title {
+  font-weight:800;
+  font-size:32rpx;
+  line-height:40rpx;
+  height:50rpx;
+  border-bottom:1rpx solid #eeeeee;
+  color:#666666;
+}
+.more_container_li_content {
+  font-size:28rpx;
+  color:#666666;
+  margin-top:2%;
+  font-weight:400;
+}
+.money_container {
+  display: flex;
+  margin: 40rpx auto 0 auto;
+}
 .shadowBox{
-  position:absolute;
+  position:fixed;
   width:100%;
   background-color:rgba(0,0,0,0.7);
   height:100%;
   left:0%;
   top:0%;
+  z-index:9;
 }
 .alertbox{
   width:55%;

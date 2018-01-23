@@ -56,11 +56,11 @@
 
 <form bindsubmit="formSubmit" report-submit="true" wx:if="{{showAlert==true}}">
   <view class="alertbox">
-	  <view class="section section_gap" style="color:#ffffff">
-	    <view style="margin-left:5%" class="section__title">暂未上线,上线时通知我</view>
+	  <view class="section section_gap" style="color:#ffffff;font-weight:800;">
+	    <view class="section__title">抱歉，该功能暂未开放</view>
 	  </view>
 	  <view class="btn-area">
-	    <button style="margin-top:5%" formType="submit">确定</button>
+	    <button style="margin-top:5%" formType="submit" type='warn'>开放时请通知我</button>
 	    <button style="margin-top:5%" bindtap="closeAlaertBox">关闭</button>
 	  </view>
   </view>

@@ -1,4 +1,5 @@
 /* pages/bainian_page/bainian_page.wxss */
+/* pages/bainian_page/bainian_page.wxss */
 page {
   background: #f24d4d;
   width: 100%;
@@ -121,26 +122,39 @@ page {
   height:25rpx;
 }
 .more_container_li {
-  width:90%;
-  margin:3%;
+  width:88%;
+  margin:2% auto 4% auto;
   background:#ffffff;
-  border-radius:10rpx;
-  padding:2%;
+  border-radius:20rpx;
+  padding:2% 3%;
+  border:1rpx solid #eeeeee;
+  background: #f9f9f9;
 }
 .more_container_li_title {
   font-weight:800;
-  padding:5rpx 10rpx;
+  font-size:32rpx;
+  line-height:40rpx;
+  height:50rpx;
+  border-bottom:1rpx solid #eeeeee;
+  color:#666666;
+}
+.more_container_li_content {
+  font-size:28rpx;
+  color:#666666;
+  margin-top:2%;
+  font-weight:400;
 }
 form{
-  position:absolute;
+  position:fixed;
   width:100%;
   background-color:rgba(0,0,0,0.7);
   height:100%;
   left:0%;
   top:0%;
+  z-index:9;
+  text-align:center;
 }
 .alertbox{
-  width:55%;
-  margin-top:42%;
-  margin-left:24%;
+  width:60%;
+  margin:60% auto 0 auto;
 }

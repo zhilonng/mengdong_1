@@ -1,12 +1,19 @@
 <!--pages/common_problem_page/common_problem_page.wxml-->
-<view class='item_container'  wx:for="{{data}}" >
-<view class='titile_container' bindtap='showOrHide' data-index="{{index}}">
-<view class='item_titile'>{{item.title}}</view>
-<view class='space'></view>
-<view class='item_drop' >v</view>
-</view>
-<view wx:if="{{item.is_show == 1}}" class='item_content_container'>
-<view class='line'></view>
-<view class='item_content'>{{item.content}}</view>
-</view>
+<view class='item_container'>
+<view class="more_container_li">
+      <view class="more_container_li_title">为什么要收1%手续费？</view>
+      <view class="more_container_li_content">卖萌和拜年功能，我们会发起方收取成交金额1%的手续费，主要原因是，微信支付也会向我们收取手续费用。请您理解。</view>
+    </view>
+    <view class="more_container_li">
+      <view class="more_container_li_title">余额提现多久到账？</view>
+      <view class="more_container_li_content">我们的余额提现功能是系统自动实现的，基本上您发起提现之后，几秒内我们就会将提现金额支付到您到微信零钱中。我们之所以标明“一至三个工作日到账”这个说法，主要是防止因大量的提现请求，造成系统排队处理时间延迟。</view>
+    </view>
+    <view class="more_container_li">
+      <view class="more_container_li_title">我能不能直接用余额支付给其他人？</view>
+      <view class="more_container_li_content">出于安全需要，我们不支持这样做。余额只可以提现，其他消费直接通过微信进行支付完成。</view>
+    </view>
+    <view class="more_container_li">
+      <view class="more_container_li_title">我有问题，怎么联系你们？</view>
+      <view class="more_container_li_content">请返回“我的”页面，点击“关注公众号”，然后直接在公众号留言，我们会尽快回复您。建议您留下您的电话或其他直接联系方式。</view>
+    </view>
 </view>

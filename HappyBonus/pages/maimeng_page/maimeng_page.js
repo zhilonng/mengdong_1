@@ -150,7 +150,7 @@ Page({
     })
     }
     var createOrder=function () {
-      var title=that.data.title==''?'准备好红包，我来卖萌啦!':that.data.title;
+      var title=that.data.title==''?'准备好红包，我来卖萌啦！':that.data.title;
       wx.request({
         url: 'https://baby.mamid.cn/User/Order/createOrder', //仅为示例，并非真实的接口地址
         method: 'POST',
@@ -176,7 +176,7 @@ Page({
           }else{
             wx.hideLoading()
             wx.showToast({
-              title: '卖萌失败,请稍后再试',
+              title: '卖萌失败，请稍后再试',
               icon: 'fail',
               duration: 2000
             })
@@ -197,7 +197,7 @@ Page({
       }else if(that.data.price=='' || that.data.price==0 || that.data.price>999){
         wx.showModal({
           title: '卖萌提醒',
-          content: '价格需要大于0元且小于999',
+          content: '金额需要大于0元且小于999',
           showCancel:false
         })
       }else{

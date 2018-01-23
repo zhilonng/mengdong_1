@@ -24,13 +24,13 @@
 </button>
 <button class='item_title_container' bindtap='turnToFriend'>
 <image class="share_icon" src='/pages/image/friend_icon.png'/>
-<view class='item_titile'>截图</view>
+<view class='item_titile'>二维码</view>
 </button>
 <!--tag  -->
 </view>
 <!--card2_titile_container  -->
 <!--record_container  -->
-<view wx:if="{{record == ''}}" style="width:100%;text-align:center;margin-top:30rpx;color:#999999;">呃，还没有人来买萌</view>
+<view wx:if="{{record == ''}}" style="width:100%;text-align:center;margin-top:40rpx;color:#999999;">呃，还没有人来买萌</view>
 <view wx:else>
 <view wx:for="{{record}}" class='record_container'>
 <image class='user_avatar'  src="{{item.buy_useravatar}}"></image>
@@ -43,6 +43,27 @@
 </view>
 <!--record_container  -->
 </view>
+<view class="more_container_title">常见问题</view>
+<view class="more_container_li">
+      <view class="more_container_li_title">这个什么呀？怎么玩？</view>
+      <view class="more_container_li_content">这是卖萌啦小程序，您的朋友正在卖萌，赶紧买一份支持吧！一个小小红包，瞬间拉近彼此距离。</view>
+    </view>
+    <view class="more_container_li">
+      <view class="more_container_li_title">我怎么买呢？</view>
+      <view class="more_container_li_content">↘ 点右下角的“萌!买一份”，微信支付就可以了。</view>
+    </view>
+    <view class="more_container_li">
+      <view class="more_container_li_title">对方多久能收到钱？</view>
+      <view class="more_container_li_content">买萌成功后，金额会立即打入朋友的余额里，随时可以提现到微信零钱，几秒内就到账。</view>
+    </view>
+    <view class="more_container_li">
+      <view class="more_container_li_title">如何转发到微信群或分享到朋友圈？</view>
+      <view class="more_container_li_content">点上面的橙色按钮“转发”，您就可以直接将这个页面分享给好友或者微信群。点“二维码”，截屏保存图片，然后可以前往朋友圈发布分享。</view>
+    </view>
+    <view class="more_container_li">
+      <view class="more_container_li_title" style="color:#f24d4d;">我也想玩，怎么开始？</view>
+      <view class="more_container_li_content">↙ 点左下角的“返回首页”，您就可以回到卖萌啦小程序的首页，立即开玩，还可选择多种玩法。</view>
+    </view>
 </view>
 <!--card2_container  -->
 
@@ -50,7 +71,7 @@
 
 <view class='bottom_container'>
 <view class="more_game" bindtap="more_game">
-更多玩法
+返回首页
 </view>
 <view class='more_money'>￥ {{price}}</view>
 <button class='give_money' bindtap="buyBtn" type='warn'>萌！买一份</button>
@@ -61,22 +82,18 @@
 	<view  class='card_iner_card1'>
 		<view wx:if="{{showBuybox==1}}" class='card_iner_card1_2'>
 			<view class='money_container'>
-				<view style='font-size:50rpx'>¥</view>
+				<view style='font-size:50rpx;margin-right:20rpx;'>¥ </view>
 				<view class='input_digits'> {{price}}</view>
 			</view>
 			<button class='btn_send' type='warn' catchtap="payBtn"> 点击支付 </button>
-			<view style='font-size:30rpx;margin-top:20rpx;'>对方可提现到微信零钱</view>
+			<view style='font-size:28rpx;color:#999999;margin-top:20rpx;'>对方可提现到微信零钱</view>
 		</view>
 		<view wx:if="{{showBuybox==2}}" class='card_iner_card1_2'>
 			<view class='money_container'>
 				<view style='font-size:40rpx'>买萌成功</view>
 			</view>
-			<button class='btn_send' type='warn'  style='background:#EEB422' catchtap='turnToRecord'> 查看纪录 </button>
-			<view class='user_option_container'>
-				<view style='color:#EE5C42' catchtap='turnToMaimeng'>我也要卖萌</view>
-				<view class='space'></view>
-				<view catchtap='more_game'>更多玩法</view>
-			</view>
+			<button class='btn_send' type='warn'  style='margin:30rpx auto 30rpx;background:#04BE02'  bindtap='closeBox'>好的</button>
+
 		</view>
 	</view>
   </view>
@@ -84,11 +101,11 @@
 <!--card_iner  -->
   <form bindsubmit="formSubmit" report-submit="true" wx:if="{{showNotice==true}}">
   <view class="alertbox">
-    <view class="section section_gap" style="color:#ffffff">
-      <view style="margin-left:5%" class="section__title">下次有人买萌时请通知我</view>
+    <view class="section section_gap" style="color:#ffffff;font-weight:800;">
+      <view class="section__title">下次有人买萌时请通知我</view>
     </view>
     <view class="btn-area">
-      <button style="margin-top:5%" formType="submit">好的</button>
+      <button style="margin-top:5%" formType="submit" type="warn">好的</button>
       <button style="margin-top:5%" bindtap="closeAlaertBox">不用了</button>
     </view>
   </view>

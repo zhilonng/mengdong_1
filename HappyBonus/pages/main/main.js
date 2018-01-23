@@ -92,6 +92,15 @@ Page({
       url: '../maimeng_page/maimeng_page',
     })
   },
+  onShareAppMessage: function () {
+    var that = this;
+    var nickname = that.data.nickname
+    return {
+      title: '卖萌是一件正经事',
+      desc: '卖萌啦',
+      path: '/pages/newyear_lucky_page/newyear_lucky_page?id=' + that.data.order_id,
+    }
+  },
     alertBox:function (){
     var that=this;
     that.setData({

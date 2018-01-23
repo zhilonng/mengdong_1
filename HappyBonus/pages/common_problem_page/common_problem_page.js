@@ -14,7 +14,7 @@ Page({
   onLoad: function (options) {
     wx.hideShareMenu()
     wx.setNavigationBarTitle({
-      title: '常见问题'
+      title: '提现相关问题'
       })
     var that=this;
     wx.request({

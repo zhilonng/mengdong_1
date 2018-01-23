@@ -1,4 +1,4 @@
-  <view style="height:100%;width:100%;position:fixed;z-index:-1;background:#f24d4d;"></view>
+<view style="height:100%;width:100%;position:fixed;z-index:-1;background:#f24d4d;"></view>
   <view class='content_container'>
     <view class='titile_container'>
       <image class="biaoti_icon" src='/pages/image/biaoti_icon.png'/>
@@ -9,10 +9,10 @@
       <image class="yue_icon" src='/pages/image/yue_icon.png'/>
       <view class='price_content'>看看亲友会给你多少红包，保持期待~</view>
     </view>
-    <view class='line'></view>
     <view class='photo_container'>
       <image class='user_photo' mode='aspectFill' src='{{choseimg}}' bindtap='chosePhoto'></image>
       <image class="photo_icon" src="/pages/image/photo_icon.png" wx:if="{{choseimg == ''}}" bindtap='chosePhoto'></image>
+      <image class="bainian_bg" src="/pages/image/bainian_bg.png" bindtap='chosePhoto'></image>
     </view>
 <!--content  -->
 <!--bottom  -->
@@ -25,15 +25,35 @@
   <view class="more_container">
     <view class="more_container_title"><text style="color:#ffbb00;">————</text> 常见问题 <text style="color:#ffbb00;">————</text></view>
     <view class="more_container_title_space"></view>
+    <view class="more_container_li">
+      <view class="more_container_li_title">这个拜年怎么玩？</view>
+      <view class="more_container_li_content">这是卖萌啦小程序的拜年功能，您可以在这里发起一个拜年，然后转发给好友或群，让他们给个红包。既好玩又好意头！</view>
+    </view>
+    <view class="more_container_li">
+      <view class="more_container_li_title">为什么要添加照片？</view>
+      <view class="more_container_li_content">拜年嘛，有照片才有诚意啊。请注意，严禁使用侵犯隐私和违规的图片。</view>
+    </view>
+    <view class="more_container_li">
+      <view class="more_container_li_title">为什么红包金额我不能设置？</view>
+      <view class="more_container_li_content">拜年红包给多给少，全看亲朋好友们的心意。</view>
+    </view>
+    <view class="more_container_li">
+      <view class="more_container_li_title">如果有人给了红包，会通知我吗？</view>
+      <view class="more_container_li_content">想收到通知，发布时请点确认按钮。请您理解，由于微信的限制，只有在您确认的情况下，我们才能给您发送一条服务通知。</view>
+    </view>
+    <view class="more_container_li">
+      <view class="more_container_li_title">钱会到哪里去，怎么提现？</view>
+      <view class="more_container_li_content">请点击底部菜单”我的“，您就可以看到”我的余额“，可随时提现，几秒时间就可以打到您的微信零钱。</view>
+    </view>
   </view>
-    <form bindsubmit="formSubmit" report-submit="true" wx:if="{{showAlert==true}}">
+  <form bindsubmit="formSubmit" report-submit="true" wx:if="{{showAlert==true}}">
   <view class="alertbox">
-    <view class="section section_gap" style="color:#ffffff">
-      <view style="margin-left:5%" class="section__title">有人发红包时请通知我</view>
+    <view class="section section_gap" style="color:#ffffff;font-weight:800;">
+      <view class="section__title">有人发红包时请通知我</view>
     </view>
     <view class="btn-area">
-      <button style="margin-top:5%" formType="submit">好的</button>
-      <button style="margin-top:5%" bintap="closeAlaertBox">不用了</button>
+      <button style="margin-top:5%" formType="submit" type="warn">好的</button>
+      <button style="margin-top:5%" bindtap="closeAlaertBox">不用了</button>
     </view>
   </view>
 </form>
