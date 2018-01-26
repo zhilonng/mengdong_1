@@ -19,6 +19,7 @@ Page({
     showNotice: false,
     pubUid: '',
     user_id: 0,
+    share_img:'',
   },
 
   /**
@@ -267,9 +268,47 @@ Page({
   },
   turnToFriend: function () {
     var that = this
-    wx.navigateTo({
-      url: '../qr_page/qr_page?order_id=' + that.data.order_id,
+    var show = function(imgurl){
+       wx.previewImage({
+            current: imgurl, // 当前显示图片的http链接
+            urls: [imgurl] // 需要预览的图片http链接列表
+        })
+    }
+    // wx.navigateTo({
+    //   url: '../qr_page/qr_page?order_id=' + that.data.order_id,
+    // })
+     wx.showLoading({
+      mask:true,
+      title: '生成中',
     })
+    if(that.data.share_img==''){
+      wx.request({
+        url: 'https://baby.mamid.cn/User/Public/getQrCode/oid/'+that.data.order_id, //仅为示例，并非真实的接口地址
+        method:'get',
+        success: function(res) {
+          if(res.data.statusCode==200){
+            wx.hideLoading()
+            var imgurl='https://baby.mamid.cn'+res.data.share_img;
+            that.setData({
+              share_img:imgurl
+            })
+            show(imgurl);
+          }else{
+            wx.showModal({
+              title: '提示',
+              content: '生成失败，请稍后再试',
+              showCancel:false
+            })
+          }
+          console.log(res.data)
+        }
+      })
+    }else{
+      wx.hideLoading()
+      var imgurl=that.data.share_img;
+      show(imgurl)
+    }
+    
   },
   inpuCheck: function (e) {
     var that = this;
