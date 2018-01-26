@@ -13,7 +13,6 @@ Page({
   type:'',
   access_token:'',
   qrcodePic:'',
-  share_img:'',
   },
 
   /**
@@ -52,10 +51,8 @@ Page({
         if(res.data.statusCode==200){
           wx.hideLoading()
           var url='https://baby.mamid.cn'+res.data.qrcodeurl;
-          var imgurl='https://baby.mamid.cn'+res.data.share_img;
           that.setData({
-            qrcodePic:url,
-            share_img:imgurl
+            qrcodePic:url
           })
         }
         console.log(res.data)
@@ -167,14 +164,5 @@ Page({
       current: url, // 当前显示图片的http链接
       urls: [url] // 需要预览的图片http链接列表
   })
-  },
-    see:function (){
-    var that=this;
-    console.log(url)
-    var url=that.data.share_img
-    wx.previewImage({
-      current: url, // 当前显示图片的http链接
-      urls: [url] // 需要预览的图片http链接列表
-  })
-  },
+  }
 })

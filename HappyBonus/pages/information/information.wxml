@@ -1,0 +1,13 @@
+<view class="read" wx:if="{{!record}}">暂无未读消息</view>
+<view class='item_container' bindtap='tureToAction' wx:for="{{record}}" bindtap="turnToPage" data-id="{{item.id}}" data-type="{{item.order_type}}" data-index="{{index}}"> 
+  <image src="" class="avatar" src="{{item.user_avatar}}" ></image>
+  <view class="item_container_1">
+  <view class="user_name">{{item.user_name}}</view>
+  <view class="action" wx:if="{{item.order_type == 1}}">买萌￥{{item.pay_price}}元</view>
+  <view class="action" wx:else>红包￥{{item.pay_price}}元</view>
+  <view class="time">{{item.pay_time}}</view>
+  </view>
+  <image src="" class="photo" src="{{item.picurl}}"></image>
+</view>
+
+

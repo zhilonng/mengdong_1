@@ -2,7 +2,7 @@
 @import "./record_item/details_item.wxss";
 Page{
   font-family:'PingFang SC Medium',  "微软雅黑";
-  background:#eeeeee;
+  background:#ffffff;
 }
 .nav{
   position:fixed;

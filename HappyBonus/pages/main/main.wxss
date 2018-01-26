@@ -3,26 +3,20 @@ page {
   background: #ffbb00;
   height: 100%;
   width: 100%;
-}
-.container {
-  height: 100%;
-  width: 100%;
+  overflow: hidden;
 }
 .background_arc {
   position:fixed;
   width: 100%;
-  height: 60rpx;
-  text-align: center;
-  color: #fff;
-  background-color: #f24d4d;
-  z-index: -1;
+  height: 100%;
+  background-color: #ffbb00;
+  z-index: -2;
 }
 .background_arc:after {
-  position: absolute;
+  position: fixed;
   left: -25%;
-  right: 0;
-  bottom: -260rpx;
   z-index: -1;
+  margin-top:-250rpx;
   content: ' ';
   height: 600rpx;
   width: 150%;
@@ -30,12 +24,16 @@ page {
   background-color: #f24d4d;
 }
 .titile_container {
+  position:fixed;
   float:left;
-  height: 60rpx;
+  height: 100rpx;
   width: 92%;
-  margin: 60rpx 4% 60rpx 4%;
+  padding: 80rpx 4% 0 4%;
   display: flex;
   flex-direction: row;
+  z-index:3;
+  top:0;
+  background: #f24d4d;
 }
 .titile {
   width: 200rpx;
@@ -46,17 +44,52 @@ page {
 .space {
   flex:1;
 }
+.information {
+  position:relative;
+  float:right;
+  height:80rpx;
+  background: #ff7700;
+  border-radius: 80rpx;
+  z-index: 0;
+  margin-right:-80rpx;
+  padding-right:100rpx;
+  padding-left:19rpx;
+  color:#ffffff;
+  line-height:80rpx;
+  font-weight:800;
+  border:1rpx solid #ff8800;
+}
+.information .number {
+  background:#f24d4d;
+  border-radius:30rpx;
+  height:35rpx;
+  min-width:35rpx;
+  padding:10rpx;
+  line-height:35rpx;
+  margin:14rpx 8rpx 0 0;
+  text-align:center;
+  float:left;
+  font-weight:800;
+}
 .avatar {
+  position:relative;
   width: 80rpx;
   height: 80rpx;
   border-radius: 80rpx;
+  z-index:1;
+  background: #ff9900;
+  border:1rpx solid #ff8800;
 }
-
+.main_container {
+  margin-top:210rpx;
+  z-index:0;
+  position: absolute;
+}
 .item_container {
   float: left;
   height: 200rpx;
   width: 92%;
-  margin: 0 4% 20rpx 4%;
+  margin: 0 4% 25rpx 4%;
   border-radius:30rpx;
   display: flex;
   flex-direction: row;
@@ -96,6 +129,7 @@ page {
 }
 .container_red {
   background: #f24d4d;
+  border:1rpx solid #ffbb00;
 }
 .titile_container_orange {
   width: 150rpx;

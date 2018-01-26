@@ -1,6 +1,6 @@
 <!--pages/mine/mine.wxml-->
-<view class='container'>
 <view class='background_arc'></view>
+<view class='container'>
 <view class='user_info_container'>
 <view class='user_info_container2'>
 <image class='user_photo' src='{{user_avatar}}'></image>
@@ -9,7 +9,7 @@
 </view>
 
 </view>
-
+<view class="main_container">
 <view class='item_container' bindtap="withdrawBtn">
 <image class="yue_icon" src='/pages/image/yue_icon.png'/>
 <view class="item_titile">我的余额</view>
@@ -31,7 +31,7 @@
 <view class='space'></view>
 <button class='item_button item_button_green' open-type="contact">关注公众号</button>
 </view>
-
+</view>
 <view class='container_footer'>
 <image class="momlab" src='/pages/image/momlab.png'/>
 <view class="momlab_dec">妈咪研究院 出品</view>

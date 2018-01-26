@@ -30,7 +30,7 @@
 					"id": 0,
 					"name": "生成了二维码",
 					"pathName": "pages/qr_page/qr_page",
-					"query": "order_id=132"
+					"query": "order_id=80"
 				},
 				{
 					"id": 1,
@@ -45,15 +45,21 @@
 					"query": "id=53"
 				},
 				{
-					"id": -1,
+					"id": 3,
 					"name": "拜年分享页面",
 					"pathName": "pages/newyear_lucky_page/newyear_lucky_page",
-					"query": "id=58"
+					"query": "id=73"
 				},
 				{
 					"id": 4,
 					"name": "个人记录",
 					"pathName": "pages/mine/mine",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "消息",
+					"pathName": "pages/information/information",
 					"query": ""
 				}
 			]

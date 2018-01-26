@@ -3,6 +3,7 @@
     "pages/main/main",
     "pages/mine/mine",
     "pages/qr_page/qr_page",
+    "pages/information/information",
     "pages/record/record",
     "pages/withdraw/withdraw",
     "pages/bainian_page/bainian_page",

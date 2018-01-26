@@ -1,11 +1,8 @@
 <!--pages/sell_adorable_page/sell_adorable_page.wxml-->
-
-
 <view class='card1_container' bindtap='closeOrPreview'>
 <image class='card1_photo' src="{{picUrl}}" mode="aspectFill"></image>
-<!--card1_bottom  -->
-
-<!--card1_bottom  -->
+<view class="photo_loading">图片加载中</view>
+<view class="slogan">好好生活，因为总有人惦记着你</view>
 </view>
 <!--card2_container  -->
 <view class='card2_container'>

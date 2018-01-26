@@ -1,0 +1,56 @@
+page {
+  background: #ffffff;
+  width: 100%;
+  height:100%;
+}
+.space {
+  flex:1;
+}
+.item_container {
+  height:110rpx;
+  width:100%;
+  padding:20rpx;
+  border-bottom:1rpx solid #dddddd;
+}
+.avatar {
+  height:80rpx;
+  width:80rpx;
+  float:left;
+  background: #eeeeee;
+  border-radius: 80rpx;
+  margin-right:20rpx;
+}
+.item_container_1 {
+  width:490rpx;
+  float:left;
+}
+.user_name {
+  font-size:26rpx;
+  color:#666666;
+  margin-bottom:5rpx;
+}
+.action {
+  font-size:28rpx;
+  color:#333333;
+  font-weight:800;
+  margin-bottom:5rpx;
+}
+.time {
+  font-size:22rpx;
+  color:#999999;
+}
+.photo {
+  width:110rpx;
+  height:110rpx;
+  background:#eeeeee;
+}
+.read {
+  height:50rpx;
+  background:#eeeeee;
+  width:100%;
+  text-align:center;
+  line-height:50rpx;
+  font-size:24rpx;
+  color:#999999;
+  border-bottom:1rpx solid #dddddd;
+}

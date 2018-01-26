@@ -3,9 +3,12 @@
 <view class='titile_container'>
 <view class='titile'>玩法</view>
 <view class='space'></view>
-<image class="avatar" src='{{userInfo.avatarUrl}}' />
+<view wx:if="{{noread > 0}}" class="information" bindtap='turnToInformation'>
+  <view class="number">{{noread}}</view>条新消息
 </view>
-
+<image class="avatar" src='{{userInfo.avatarUrl}}' bindtap='turnToInformation'/>
+</view>
+<view class="main_container">
 <view class='item_container item_top container_white' bindtap='turnToSelAdorable'>
 <view class='item_content_container'>
 <view class='item_title_container titile_container_orange'>
@@ -29,7 +32,6 @@
 <view class='space'></view>
 <image class="bainian_img" src='/pages/image/bainian_img.png'/>
 </view>
-
 <!--
 <view class='item_container container_white'>
 <view class='item_content_container'>
@@ -52,6 +54,7 @@
 </view>
 <view class='space'></view>
 <image class="jiqiren_img" src='/pages/image/jiqiren_img.png'/>
+</view>
 </view>
 
 <form bindsubmit="formSubmit" report-submit="true" wx:if="{{showAlert==true}}">

@@ -8,6 +8,7 @@ Page({
     userInfo:[],
     user_avatar:'',
     showAlert:[],
+    noread:0,
   },
 
   /**
@@ -15,6 +16,27 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    var timeset= function(){
+      setTimeout(function(){
+        that.setData({
+          userInfo:getApp().globalData.userInfo
+        })
+        wx.request({
+          url: 'https://baby.mamid.cn/User/User/getNoread/user_id/' + that.data.userInfo.user_id, //仅为示例，并非真实的接口地址
+          method: 'get',
+          success: function (res) {
+            console.log(res.data)
+            if(res.data.count>0){
+              that.setData({
+                noread:res.data.count
+              })
+            }
+          }
+        })
+        console.log(that.data.userInfo.user_id)
+        wx.hideLoading()
+      },1500)
+    }
     wx.getUserInfo({
       success: function (user) {
         console.log(user)
@@ -23,9 +45,15 @@ Page({
         })
       }
     })
-    wx.setNavigationBarTitle({
-      title: '卖萌啦'
+    if(!that.data.userInfo.user_id){
+      wx.showLoading({
+        title: '加载中',
+        mask:true,
       })
+      timeset()
+    }else{
+    }
+   
   },
 
   /**
@@ -39,6 +67,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that=this
+    wx.request({
+          url: 'https://baby.mamid.cn/User/User/getNoread/user_id/' + that.data.userInfo.user_id, //仅为示例，并非真实的接口地址
+          method: 'get',
+          success: function (res) {
+            console.log(res.data)
+              that.setData({
+                noread:res.data.count
+              })
+          }
+    })
   
   },
 
@@ -87,6 +126,12 @@ Page({
       url: '../record/record',
     })
   },
+  turnToInformation: function () {
+    var that=this
+    wx.navigateTo({
+      url: '../information/information?user_id='+that.data.userInfo.user_id,
+    })
+  },
   turnToSelAdorable: function() {
     wx.navigateTo({
       url: '../maimeng_page/maimeng_page',
@@ -98,7 +143,7 @@ Page({
     return {
       title: '卖萌是一件正经事',
       desc: '卖萌啦',
-      path: '/pages/newyear_lucky_page/newyear_lucky_page?id=' + that.data.order_id,
+      path: '/pages/main/main',
     }
   },
     alertBox:function (){

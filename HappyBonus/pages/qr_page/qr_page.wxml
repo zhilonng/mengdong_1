@@ -1,5 +1,5 @@
 <!--pages/qr_page/qr_page.wxml-->
-<!--<view class="container" bindtap='turnTopage' data-index="{{order_id}}">
+<view class="container" bindtap='turnTopage' data-index="{{order_id}}">
 	<view class='pic'>
     <image class="picture" mode="aspectFill" src="{{picUrl}}"></image>
 	</view>
@@ -17,6 +17,5 @@
     </button>
     <view class="shareTopic">
     </view>
-  </view>-->
-<image style="width:100%;height:100%" mode="scaleToFill" bindtap="see" src="{{share_img}}"></image>
+  </view>
 
