@@ -9,6 +9,7 @@ Page({
     user_avatar:'',
     showAlert:[],
     noread:0,
+    loading:true,
   },
 
   /**
@@ -28,14 +29,17 @@ Page({
             console.log(res.data)
             if(res.data.count>0){
               that.setData({
-                noread:res.data.count
+                noread:res.data.count,
               })
             }
           }
         })
         console.log(that.data.userInfo.user_id)
-        wx.hideLoading()
-      },1500)
+        that.setData({
+          loading:false
+        })
+        // wx.hideLoading()
+      },2500)
     }
     wx.getUserInfo({
       success: function (user) {
@@ -46,10 +50,10 @@ Page({
       }
     })
     if(!that.data.userInfo.user_id){
-      wx.showLoading({
-        title: '加载中',
-        mask:true,
-      })
+      // wx.showLoading({
+      //   title: '加载中',
+      //   mask:true,
+      // })
       timeset()
     }else{
     }

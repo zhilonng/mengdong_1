@@ -3,6 +3,11 @@
 <view class='titile_container'>
 <view class='titile'>玩法</view>
 <view class='space'></view>
+<view class="pswp__preloader__icn" wx:if="{{loading == true}}">
+  <view class="pswp__preloader__cut">
+    <view class="pswp__preloader__donut"></view>
+  </view>
+</view>
 <view wx:if="{{noread > 0}}" class="information" bindtap='turnToInformation'>
   <view class="number">{{noread}}</view>条新消息
 </view>

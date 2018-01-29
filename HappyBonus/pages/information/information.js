@@ -7,6 +7,7 @@ Page({
    */
   data: {
     record:[],
+    show:false,
   },
 
   /**
@@ -82,18 +83,21 @@ Page({
       }
       wx.navigateTo({
         url: url,
-      })
-      var data=that.data.record
-      //为了防止循环删除后元素位置被取代 所以用i=i-1
-      for (var i = 0; i < data.length; i++) {
-        if(data[i].order_id==id){
-          data.splice(i,1);
-          i=i-1;
+        success:function(){
+          var data=that.data.record
+          //为了防止循环删除后元素位置被取代 所以用i=i-1
+          for (var i = 0; i < data.length; i++) {
+            if(data[i].order_id==id){
+              data.splice(i,1);
+              i=i-1;
+            }
+          }
+          that.setData({
+            record:data
+          })
         }
-      }
-      that.setData({
-        record:data
       })
+
     }
     wx.request({
       url: 'https://baby.mamid.cn/User/User/turnToread/order_id/' + id, //仅为示例，并非真实的接口地址
